@@ -6,7 +6,8 @@
 
 # Circular TwAIn Industrial Data Platform Architecture
 
-The dii
+
+The Circular TwAIn industrial data platform facilitates seamless and secure data sharing among various parties. It achieves this by implementing a centralized software architecture that collects data from ethereogeneus digital twin sources and makes it discoverable to consumers through a digital services marketplace. The platform includes an identity and access management layer that ensures data can only be accessed by authorized parties. This layer enforces a policy-based access mechanism to the data broker component, based on previous transactions that occurred in the marketplace.
 
 
 <p align="center">
