@@ -25,6 +25,10 @@ The Circular TwAIn industrial data platform is a technology infrastructure based
   <b>Fig. 1:</b> The industrial Data Platform Architecture
 </p>
 
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/0a4e68a1-af20-413d-afc8-949389335c96)
+
+
+
 The industrial data platform architecture involves three types of entities:
 - the **centralized IDP itself**: the entity who owns and maintain the technological stack, ensuring the secure data brokering among parties.
 - The **data producer**: the entity in charge of pushing data to the centralized platform and making them available inside the marketplace. The data producer may correspond also to the role of data owner however, generally speaking, the data provider and data owner roles are considered separate. Referring to the Circular TwAIn reference architecture, they implement the physical layer from whose data are sourced.
