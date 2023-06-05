@@ -15,4 +15,15 @@ The Circular TwAIn industrial data platform facilitates seamless and secure data
 </p>
  
 
+### Table of Content:
+[Industrial Data Platform Components](#industrial-data-platform-components)
+[Data Producer Journey](#data-producer-journey)
+[Data Consumer Journey](#data-consumer-journey)
+
+
+## Industrial Data Platform Components
+
+## Data Producer Journey
+
+## Data Consumer Journey
 
