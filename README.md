@@ -3,6 +3,9 @@
   <img  src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/48c05e6d-ccbc-488f-97f9-bce4cbde07f2">
 </p>
 
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/314413c1-2199-4764-9bd5-63fb4254f05e)
+
+
 
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
