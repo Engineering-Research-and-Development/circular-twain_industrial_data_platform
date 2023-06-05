@@ -12,8 +12,9 @@ The Circular TwAIn industrial data platform facilitates seamless and secure data
 
 ### Table of Content:
 - [Industrial Data Platform Components](#industrial-data-platform-components)
-- [Data Producer Journey](#data-producer-journey)
-- [Data Consumer Journey](#data-consumer-journey)
+- [Administration Setup](#administration-setup)
+- [Data Producer Journeys](#data-producer-journeys)
+- [Data Consumer Journeys](#data-consumer-journeys)
 
 
 ## Industrial Data Platform Components
@@ -64,7 +65,29 @@ The identity and access management layer implements the security technological s
 
 
 
-## Data Producer Journey
+## Administration Setup
 
-## Data Consumer Journey
+
+
+
+## Data Producer Journeys
+
+In this section it is explained how a data producer became allowed to push digital twin data in Orion Context Broker and publish its offering in the Marketplace:
+
+### Prerequisites
+- The user registered an account in the Identity Provider component (keyrock)
+- The user knows the data structure of the digital twin or (preferrably) uses the data structure of the smart data model
+- An empty Digital Twin entity was created by the platform administrator in Orion
+- The user contacted the platform administrator, expressing its will to join the platform as a producer. The administrator enabled him the "Producer" role for Orion (expressing the desired entity) and the "Seller" role for the marketplace
+
+### Journey 1: pushing new data
+
+- The producer
+- The producer uses the access token provided by Keyrock to push new data as a HTTP PATCH request to the context broker
+
+
+
+
+
+## Data Consumer Journeys
 
