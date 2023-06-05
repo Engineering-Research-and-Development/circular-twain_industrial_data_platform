@@ -7,7 +7,7 @@
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
 
-The Circular TwAIn industrial data platform is a technology infrastructure based on open source components enabling collection, exchange and monetization of large volumes of data generated within an industrial environment. It serves as a central hub for managing and integrating data from various sources, such as sensors, machines, devices, and production systems, ensuring data governance and sovereignty among different parties. The platform includes an identity and access management layer that ensures data can only be accessed by authorized parties. This layer enforces a policy-based access mechanism to the data broker component, based on previous transactions that occurred in the marketplace.
+The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling collection, exchange and monetization of large volumes of data generated within an industrial environment. It serves as a central hub for managing and integrating data from various sources, such as sensors, machines, devices, and production systems, ensuring data governance and sovereignty among different parties. The platform includes an identity and access management layer that ensures data can only be accessed by authorized parties. This layer enforces a policy-based access mechanism to the data broker component, based on previous transactions that occurred in the marketplace.
  
 
 ### Table of Content:
@@ -22,14 +22,14 @@ The Circular TwAIn industrial data platform is a technology infrastructure based
 <p align="center">
  <img width=845 heigth=460 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/cffb084b-9b9b-40ee-af25-1e225d0e9657">
   <br />
-  <b>Fig. 1:</b> The industrial Data Platform Architecture
+  <b>Fig. 1:</b> The Industrial Data Platform Architecture
 </p>
 
 
 
 
 
-The industrial data platform architecture involves three types of entities:
+The Industrial Data Platform architecture involves three types of entities:
 - the **centralized IDP itself**: the entity who owns and maintain the technological stack, ensuring the secure data brokering among parties.
 - The **data producer**: the entity in charge of pushing data to the centralized platform and making them available inside the marketplace. The data producer may correspond also to the role of data owner however, generally speaking, the data provider and data owner roles are considered separate. Referring to the Circular TwAIn reference architecture, they implement the physical layer from whose data are sourced.
 - The **data consumer**: the entity who is able to browse different data service in the marketplace, selects the desided one and acquires the right to access data throught a marketplace transaction.
@@ -39,7 +39,7 @@ In this section it is provided a focused overview on the centralized IDP technol
 
 ### Data Brokering Layer
 
-The data brokering layer is covered by the [**FIWARE Orion Context Broker**](https://fiware-orion.readthedocs.io/en/master/) implementing the [**NGSI-LD APIs**](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.01_60/gs_cim009v010401p.pdf). Orion is a central component of the industrial data platform and it is in charge of allowing users to query (in case of data consumers) or writing/update (in case of data producers) context information. By implementing the NGSI-LD standard, it is possible to link entities through relationships, provide property graphs and semantics thanks to the [JSON-LD](https://json-ld.org/) standard, thus leveraging the Smart Data Model Initiative.
+The data brokering layer is covered by the [**FIWARE Orion Context Broker**](https://fiware-orion.readthedocs.io/en/master/) implementing the [**NGSI-LD APIs**](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.01_60/gs_cim009v010401p.pdf). Orion is a central component of the Industrial Data Platform and it is in charge of allowing users to query (in case of data consumers) or writing/update (in case of data producers) context information. By implementing the NGSI-LD standard, it is possible to link entities through relationships, provide property graphs and semantics thanks to the [JSON-LD](https://json-ld.org/) standard, thus leveraging the Smart Data Model Initiative.
 
 
 ### Digital Models and Vocabularies
