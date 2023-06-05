@@ -24,6 +24,10 @@ The Circular TwAIn industrial data platform facilitates seamless and secure data
   <b>Fig. 1:</b> The industrial Data Platform Architecture
 </p>
 
+The industrial data platform architecture involves three types of entities:
+- the **centralized platform**: the entity who owns the technological stack, ensuring the secure data brokering among parties.
+- The **data producer**: the entity in charge of pushing data to the centralized platform and making them available inside the marketplace. The data producer may correspond also to the role of data owner however, generally speaking, the data provider and data owner roles are considered separate.
+- The **data consumer**: the entity who is able to browse different data service in the marketplace, selects the desided one and acquires the right to access data throught a marketplace transaction.
 
 
 ## Data Producer Journey
