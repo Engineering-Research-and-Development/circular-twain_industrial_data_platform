@@ -52,8 +52,14 @@ A set of databases are implemented in the data persistence layer to support all 
 
 ### Human and Application Layer
 
-The human and application layer in the centralized platform is implemented by the [**FIWARE Business API Ecosystem**](https://business-api-ecosystem.readthedocs.io/en/latest/) developed by FIWARE and TMForum. It implements the data monetization functionality allowing data producers to create offerings exposing their digital twin data and allowing data consumers to discover and buy data services. The marketplace is equipped with the NGSI-LD Policies Plugin, thus adding a product asset able to create an access policies in the security layer components for those consumers who have purchased a particular digital service.
+The human and application layer in the centralized platform is implemented by the [**FIWARE Business API Ecosystem**](https://business-api-ecosystem.readthedocs.io/en/latest/) developed by FIWARE and TMForum. It enables data producers to generate offerings that expose their digital twin data. It also enables data consumers to explore and purchase data services. The marketplace includes the NGSI-LD Policies Plugin, which adds a product asset capable of creating access policies within the security layer components for consumers who have acquired a specific digital service. When the consumer acquires rights to access data, the marketplace will also provide him the access token necessary to make future queries in Orion.
 
+
+### Identity and Access Management Layer
+
+The identity and access management layer implements the security technological stack to control access to data. The following components are deployed in the Industrial Data Platform architecture:
+- [**FIWARE Keyrock**](https://fiware-idm.readthedocs.io/en/latest/): Keyrock is the FIWARE component primarly responsible for Identity Management, thus offering a user the possibility to create an identity-providing account. Keyrock administrators are allowed to create multiple applications, each of which can be enriched with roles associated to particular permissions. In this context, two applications should be instantiated: the *Orion Context Broker* application with the "producer" and "consumer" roles, and the *Marketplace* application with the "seller" and "customer" roles. Those roles have grants, respectively, to read/write and read-only data in their corresponding application. By doing so, keyrock implements the Policy Decision Point (PDP) functionality, implementing access level 1 (authentication) and 2 (role-based) for the corresponding application.
+- 
 
 
 
