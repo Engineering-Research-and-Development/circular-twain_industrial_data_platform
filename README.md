@@ -8,6 +8,7 @@
 
 
 <p align="center">
- <img width=500 heigth=501 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/27948e3e-a1ec-4abd-8a53-077374c2fe80">
+ <img width=845 heigth=460 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/32553e0f-4132-44f8-bfe8-2ea3ad710c2e">
 </p>
  
+
