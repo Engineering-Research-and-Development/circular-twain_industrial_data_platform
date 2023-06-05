@@ -26,6 +26,7 @@ The Circular TwAIn Industrial Data Platform is a technology infrastructure based
 </p>
 
 
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/0c0fe62b-e51d-444b-bd5b-e77301e1f46b)
 
 
 
