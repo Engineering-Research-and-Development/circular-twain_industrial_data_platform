@@ -1,4 +1,5 @@
-![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/d212977d-7069-4858-9784-4e6be6aaba3e)
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/48c05e6d-ccbc-488f-97f9-bce4cbde07f2)
+
 
 # Circular TwAIn Industrial Data Platform Architecture
 
