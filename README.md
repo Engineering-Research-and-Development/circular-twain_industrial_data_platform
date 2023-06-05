@@ -37,6 +37,11 @@ In this section it is provided a focused overview on the centralized IDP technol
 The data brokering layer is covered by the [**FIWARE Orion Context Broker**](https://fiware-orion.readthedocs.io/en/master/) implementing the [**NGSI-LD APIs**](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.01_60/gs_cim009v010401p.pdf). Orion is a central component of the industrial data platform and it is in charge of allowing users to query (in case of data consumers) or writing/update (in case of data producers) context information. By implementing the NGSI-LD standard, it is possible to link entities through relationships, provide property graphs and semantics thanks to the [JSON-LD](https://json-ld.org/) standard, thus leveraging the Smart Data Model Initiative.
 
 
+### Digital Models and Vocabularies
+
+The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures, hence improving data interoperability. Thanks to the smart data models, the data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion and the *specification* in the marketplace, highliting which of the attributes are available to consumers. Moreover, *example payloads* in NGSI-LD standard are available to producers to share those information correctly.
+
+
 
 
 ## Data Producer Journey
