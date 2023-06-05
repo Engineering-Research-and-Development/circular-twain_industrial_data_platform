@@ -42,6 +42,19 @@ The data brokering layer is covered by the [**FIWARE Orion Context Broker**](htt
 The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures, hence improving data interoperability. Thanks to the smart data models, the data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion and the *specification* in the marketplace, highliting which of the attributes are available to consumers. Moreover, *example payloads* in NGSI-LD standard are available to producers to share those information correctly.
 
 
+### Data Persistence Layer
+
+A set of databases are implemented in the data persistence layer to support all components. In particular:
+- [**mongoDB**](https://www.mongodb.com/docs/) is a non-realtional database that supports both the Marketplace and Orion-LD components
+- [**MySQL**](https://dev.mysql.com/doc/) is a Relational Database Management System that supports the Keyrock components to store users, applications and policies
+- [**elasticsearch**](https://www.elastic.co/guide/index.html) is a non-relational database based on Apache Lucene that implements a powerful search engine for the marketplace
+
+
+### Human and Application Layer
+
+The human and application layer in the centralized platform is implemented by the [**FIWARE Business API Ecosystem**](https://business-api-ecosystem.readthedocs.io/en/latest/) developed by FIWARE and TMForum. It implements the data monetization functionality allowing data producers to create offerings exposing their digital twin data and allowing data consumers to discover and buy data services. The marketplace is equipped with the NGSI-LD Policies Plugin, thus adding a product asset able to create an access policies in the security layer components for those consumers who have purchased a particular digital service.
+
+
 
 
 ## Data Producer Journey
