@@ -7,7 +7,7 @@
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
 
-The Circular TwAIn industrial data platform is a technology infrastructure based on open source components enabling collection, storage, processing and monetization of large volumes of data generated within an industrial environment. It serves as a central hub for managing and integrating data from various sources, such as sensors, machines, devices, and production systems, ensuring data governance and sovereignty among different parties. The platform includes an identity and access management layer that ensures data can only be accessed by authorized parties. This layer enforces a policy-based access mechanism to the data broker component, based on previous transactions that occurred in the marketplace.
+The Circular TwAIn industrial data platform is a technology infrastructure based on open source components enabling collection, exchange and monetization of large volumes of data generated within an industrial environment. It serves as a central hub for managing and integrating data from various sources, such as sensors, machines, devices, and production systems, ensuring data governance and sovereignty among different parties. The platform includes an identity and access management layer that ensures data can only be accessed by authorized parties. This layer enforces a policy-based access mechanism to the data broker component, based on previous transactions that occurred in the marketplace.
  
 
 ### Table of Content:
