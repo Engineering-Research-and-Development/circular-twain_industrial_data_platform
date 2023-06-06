@@ -48,10 +48,12 @@ The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/
 
 ### Data Persistence Layer
 
-A set of databases are implemented in the data persistence layer to support all components. In particular:
+A set of databases are implicitly implemented in the data persistence layer to support all components. In particular:
 - [**mongoDB**](https://www.mongodb.com/docs/) is a non-realtional database that supports both the Marketplace and Orion-LD components
 - [**MySQL**](https://dev.mysql.com/doc/) is a Relational Database Management System that supports the Keyrock components to store users, applications and policies
 - [**elasticsearch**](https://www.elastic.co/guide/index.html) is a non-relational database based on Apache Lucene that implements a powerful search engine for the marketplace
+
+Moreover, the following components are
 
 
 ### Human and Application Layer
