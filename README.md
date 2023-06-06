@@ -49,12 +49,12 @@ The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/
 ### Data Persistence Layer
 
 A set of databases are implicitly implemented in the data persistence layer to support all components. In particular:
-- [**mongoDB**](https://www.mongodb.com/docs/): a non-realtional database that supports both the Marketplace and Orion-LD components
-- [**MySQL**](https://dev.mysql.com/doc/): a Relational Database Management System that supports the Keyrock components to store users, applications and policies
-- [**elasticsearch**](https://www.elastic.co/guide/index.html): a non-relational database based on Apache Lucene that implements a powerful search engine for the marketplace
-
+- [**mongoDB**](https://www.mongodb.com/docs/): a non-realtional database that supports both the Marketplace and Orion-LD components.
+- [**MySQL**](https://dev.mysql.com/doc/): a Relational Database Management System that supports the Keyrock components to store users, applications and policies.
+- [**elasticsearch**](https://www.elastic.co/guide/index.html): a non-relational database based on Apache Lucene that implements a powerful search engine for the marketplace.
+.
 Moreover, the following components are implemented to make historical data storage possible:
-- [**FIWARE Mintaka**](https://github.com/FIWARE/mintaka): a Orion-LD component implementing NGSI-LD temporal API
+- [**FIWARE Mintaka**](https://github.com/FIWARE/mintaka): a Orion-LD component implementing NGSI-LD temporal API.
 - [**TimescaleDB**](https://docs.timescale.com/): a high performance PostgreSQL database designed to work with time-series data.
 
 
