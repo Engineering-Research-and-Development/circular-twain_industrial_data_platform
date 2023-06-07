@@ -43,14 +43,15 @@ The data brokering layer is covered by the [**FIWARE Orion Context Broker**](htt
 
 ### Data Processing
 
-- [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. With StreamPipes, the Industrial Data Platform operator can design and implement pipelines useful to map streaming data from diverse Digital Twins to Smart Data Models. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases, including real-time monitoring, anomaly detection, and data integration. StreamPipes emphasizes usability, extensibility, and interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
+- [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html): an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. With StreamPipes, the Industrial Data Platform operator can design and implement pipelines useful to map streaming data from diverse Digital Twins to Smart Data Models. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases, including real-time monitoring, anomaly detection, and data integration. StreamPipes emphasizes usability, extensibility, and interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
+- [**Python**](https://docs.python.org/3/): Python language is one of the most popular programming language for data analysis and manipulation thanks to the large community support and library repository it provides. Common data analysis and manipulation libraries, such as *pandas*, *numpy*, *scipy*, *scikit-learn* are suitable for the Industrial Data Platform operators to write custom algorithms for transforming and mapping raw digital twin data into Smart Data Model structures.
 
 
 ### Data Persistence
 
 A set of databases are implicitly implemented in the data persistence layer to support all components. In particular:
 - [**mongoDB**](https://www.mongodb.com/docs/): a non-realtional database that supports the Orion-LD component.
-- [**MySQL**](https://dev.mysql.com/doc/): a Relational Database Management System that supports the Keyrock components to store users, applications and policies.
+- [**MySQL**](https://dev.mysql.com/doc/): a relational Database Management System (DBMS) that supports the Keyrock components to store users, applications and policies.
 
 
 Moreover, the following components are implemented to make historical data storage possible:
