@@ -29,9 +29,9 @@ The Circular TwAIn Industrial Data Platform is a technology infrastructure based
 
 The Industrial Data Platform architecture covers the following functionalities:
 - the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from the physical world (Physical - Virtual Twinning), as well as to send commands to digital twins (Virtual - Physical Twinning). Meanwhile, the current state of the digital twin is made available to users thanks to the brokering function.
-- the **Data Processing**: *transformation and mapping* techniques are applied to raw data, allowing users to standardize raw sensor data from etherogeneous sources to *Smart Data Models*.
-- The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing digital twin.
-- The use of **Smart Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
+- the **Data Processing**: *transformation and mapping* techniques are applied to raw data, allowing users to work on raw sensor data from etherogeneous sources to build Standardized Data Models.
+- The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing digital twins.
+- The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to the *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
 In this section it is provided a focused overview on the centralized IDP technological stack, explaining how each component fits with the other to implement the desided functionalities.
 
@@ -40,6 +40,7 @@ In this section it is provided a focused overview on the centralized IDP technol
 
 - [**FIWARE Orion Context Broker**](https://fiware-orion.readthedocs.io/en/master/) implementing the [**NGSI-LD APIs**](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.01_60/gs_cim009v010401p.pdf): a central component of the Industrial Data Platform and it is in charge of allowing users to query and updating context information. By implementing the NGSI-LD standard, it is possible to link entities through relationships, provide property graphs and semantics thanks to the [JSON-LD](https://json-ld.org/) standard, thus leveraging the Smart Data Model Initiative.
 - [**Apache Kafka**](https://kafka.apache.org/documentation/): an open-source distributed streaming platform designed for handling high-volume, real-time data streams. Kafka is based on a publish-subscribe messaging model, where data is organized into topics where data records are published to these topics to be consumed by other components. Kafka offers high throughput and low latency, making it ideal for use cases such as real-time analytics. Kafka also integrates well with other big data frameworks and systems such as Apache Stremapipes, allowing seamless data integration and processing pipelines.
+- [**IDAS Agents**](https://www.fiware.org/catalogue/): a set of FIWARE generic enablers acting as an interface to the IoT world. They are able to gather data from ethereogeneous sources of data using different IoT protocols such as LWM2M over CoaP, JSON or UltraLight over HTTP/MQTT, OPC-UA, Sigfox or LoRaWAN, but also to send actuation commands back, hence convering both communication sides with the physical world.
 
 
 ### Data Processing
