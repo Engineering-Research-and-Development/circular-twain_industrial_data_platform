@@ -28,7 +28,7 @@ The Circular TwAIn Industrial Data Platform is a technology infrastructure based
 
 The Industrial Data Platform architecture covers the following functionalities:
 - the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from the physical world (Physical - Virtual Twinning), as well as to send commands to digital twins (Virtual - Physical Twinning). Meanwhile, the current state of the digital twin is made available to users thanks to the brokering function.
-- the **Data Processing**: *cleaning,transformation and mapping* techniques are applied to raw data, allowing users to discover and mitigate anomalies (outliers or missing data) in raw sensor data, but also to standardize etherogeneous sources of data and map partial results to *Smart Data Models*.
+- the **Data Processing**: *transformation and mapping* techniques are applied to raw data, allowing users to standardize raw sensor data from etherogeneous sources to *Smart Data Models*.
 - The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing digital twin.
 - The use of **Smart Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
