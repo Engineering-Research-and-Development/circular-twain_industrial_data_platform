@@ -47,9 +47,8 @@ The data brokering layer is covered by the [**FIWARE Orion Context Broker**](htt
 ### Data Persistence
 
 A set of databases are implicitly implemented in the data persistence layer to support all components. In particular:
-- [**mongoDB**](https://www.mongodb.com/docs/): a non-realtional database that supports both the Marketplace and Orion-LD components.
+- [**mongoDB**](https://www.mongodb.com/docs/): a non-realtional database that supports the Orion-LD component.
 - [**MySQL**](https://dev.mysql.com/doc/): a Relational Database Management System that supports the Keyrock components to store users, applications and policies.
-- [**elasticsearch**](https://www.elastic.co/guide/index.html): a non-relational database based on Apache Lucene that implements a powerful search engine for the marketplace.
 
 
 Moreover, the following components are implemented to make historical data storage possible:
@@ -68,8 +67,7 @@ The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/
 
 The identity and access management layer implements the security technological stack to control access to data. The following components are deployed in the Industrial Data Platform architecture:
 - [**FIWARE Keyrock**](https://fiware-idm.readthedocs.io/en/latest/): Keyrock is the FIWARE component primarly responsible for Identity Management, thus offering a user the possibility to create an identity-providing account. Keyrock administrators are allowed to create multiple applications, each of which can be enriched with roles associated to particular permissions. In this context, two applications should be instantiated: the *Orion Context Broker* application with the "producer" and "consumer" roles, and the *Marketplace* application with the "seller" and "customer" roles. Those roles have grants, respectively, to read/write and read-only data in their corresponding application. By doing so, keyrock implements the Policy Decision Point (PDP) functionality, implementing PDP Access Control Level 1 (Authentication Access) and Level 2 (Basic Authorization) for the corresponding application.
-- [**FIWARE AuthZForce**](https://authzforce-ce-fiware.readthedocs.io/en/latest/): AuthZForce completes the PDP functionality of the security layer, implementing the PDP access control Level 3 (Advanced Authorization) thanks to its fine-grained access policies written in XACML.
-- [**FIWARE-PEP-PROXY WILMA**](https://fiware-pep-proxy.readthedocs.io/en/latest/): Wilma is an implementation of a PEP-proxy, used in the platform to come between the user and Orion so that it can intercept their requests and redirect them to the Policy Decision Point, implemented by the Keyrock and AuthZForce pair. 
+- [**FIWARE-PEP-PROXY WILMA**](https://fiware-pep-proxy.readthedocs.io/en/latest/): Wilma is an implementation of a PEP-proxy, used in the platform to come between the user and Orion so that it can intercept their requests and redirect them to the Policy Decision Point, implemented by the Keyrock. 
 
 
 
