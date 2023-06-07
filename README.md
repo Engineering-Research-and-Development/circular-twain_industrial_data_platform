@@ -8,15 +8,13 @@
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
 
-The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling collection, exchange and monetization of large volumes of data generated within an industrial environment. It serves as a central hub for managing and integrating data from various sources, such as sensors, machines, devices, and production systems, ensuring data governance and sovereignty among different parties. The platform includes an identity and access management layer that ensures data can only be accessed by authorized parties. This layer enforces a policy-based access mechanism to the data broker component, based on previous transactions that occurred in the marketplace.
+The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as a local hub for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to converge in standardized models. Thanks to the Smart Data Models initiative, digital twin data could be easily exchanged with other Industrial Data Space participants through IDS Connectors.
+
  
 
 ### Table of Content:
 - [Industrial Data Platform Components](#industrial-data-platform-components)
-- [Administration Setup](#administration-setup)
-- [Generic Journeys](#generic-journeys)
-- [Data Producer Journeys](#data-producer-journeys)
-- [Data Consumer Journeys](#data-consumer-journeys)
+- [Setup](#setup)
 
 
 ## Industrial Data Platform Components
@@ -28,26 +26,25 @@ The Circular TwAIn Industrial Data Platform is a technology infrastructure based
 </p>
 
 
-
-The Industrial Data Platform architecture involves three types of entities:
-- the **centralized IDP itself**: the entity who owns and maintain the technological stack, ensuring the secure data brokering among parties.
-- The **data producer**: the entity in charge of pushing data to the centralized platform and making them available inside the marketplace. The data producer may correspond also to the role of data owner however, generally speaking, the data provider and data owner roles are considered separate. Referring to the Circular TwAIn reference architecture, they implement the physical layer from whose data are sourced.
-- The **data consumer**: the entity who is able to browse different data service in the marketplace, selects the desided one and acquires the right to access data throught a marketplace transaction.
+The Industrial Data Platform architecture covers the following functionalities:
+- the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from the physical world (Physical - Virtual Twinning), as well as to send commands to digital twins (Virtual - Physical Twinning). Meanwhile, the current state of the digital twin is made available to users thanks to the brokering function.
+- the **Data Processing**: *cleaning,transformation and mapping* techniques are applied to raw data, allowing users to discover and mitigate anomalies (outliers or missing data) in raw sensor data, but also to standardize etherogeneous sources of data and map partial results to *Smart Data Models*.
+- The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing digital twin.
+- The use of **Smart Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
 In this section it is provided a focused overview on the centralized IDP technological stack, explaining how each component fits with the other to implement the desided functionalities.
 
 
-### Data Brokering Layer
+### Data Ingestion and Brokering 
 
 The data brokering layer is covered by the [**FIWARE Orion Context Broker**](https://fiware-orion.readthedocs.io/en/master/) implementing the [**NGSI-LD APIs**](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.01_60/gs_cim009v010401p.pdf). Orion is a central component of the Industrial Data Platform and it is in charge of allowing users to query (in case of data consumers) or writing/update (in case of data producers) context information. By implementing the NGSI-LD standard, it is possible to link entities through relationships, provide property graphs and semantics thanks to the [JSON-LD](https://json-ld.org/) standard, thus leveraging the Smart Data Model Initiative.
 
 
-### Digital Models and Vocabularies
+### Data Processing
+**Streampipes??**
 
-The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures, hence improving data interoperability. Thanks to the smart data models, the data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion and the *specification* in the marketplace, highliting which of the attributes are available to consumers. Moreover, *example payloads* in NGSI-LD standard are available to producers to share those information correctly.
 
-
-### Data Persistence Layer
+### Data Persistence
 
 A set of databases are implicitly implemented in the data persistence layer to support all components. In particular:
 - [**mongoDB**](https://www.mongodb.com/docs/): a non-realtional database that supports both the Marketplace and Orion-LD components.
@@ -60,9 +57,11 @@ Moreover, the following components are implemented to make historical data stora
 - [**TimescaleDB**](https://docs.timescale.com/): a high performance PostgreSQL database designed to work with time-series data.
 
 
-### Human and Application Layer
+### Digital Models and Vocabularies
 
-The human and application layer in the centralized platform is implemented by the [**FIWARE Business API Ecosystem**](https://business-api-ecosystem.readthedocs.io/en/latest/) developed by FIWARE and TMForum. It enables data producers to generate offerings that expose their digital twin data. It also enables data consumers to explore and purchase data services. The marketplace includes the NGSI-LD Policies Plugin, which adds a product asset capable of creating access policies within the security layer components for consumers who have acquired a specific digital service. When the consumer acquires rights to access data, the marketplace will also provide him the access token necessary to make future queries in Orion.
+The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures, hence improving data interoperability. Thanks to the smart data models, the data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion and the *specification* in the marketplace, highliting which of the attributes are available to consumers. Moreover, *example payloads* in NGSI-LD standard are available to producers to share those information correctly.
+
+
 
 
 ### Identity and Access Management Layer
@@ -74,42 +73,7 @@ The identity and access management layer implements the security technological s
 
 
 
-## Administration Setup
+## Setup
 
 
-
-## Generic Journeys
-
-In this section, generic journeys are listed. Those kind of journeys are both user-centric or system-centric. For user-centric journyes, users will receive different answers based on their roles and permissions on both the keyrock-registered applications. For system-centric journes, uses cases are explained for components interaction.
-
-### Prerequisites
-- The user registered an account in the Identity Provider component (keyrock)
-- The user is already registered in the desired application
-
-### Journey 1: Getting Access Token (OAuth2.0)
-- 
-
-
-
-
-## Data Producer Journeys
-
-In this section it is explained how a data producer became allowed to push digital twin data in Orion Context Broker and publish its offering in the Marketplace:
-
-### Prerequisites
-- The user registered an account in the Identity Provider component (keyrock)
-- The user knows the data structure of the digital twin or (preferrably) uses the data structure of the smart data model
-- An empty Digital Twin entity was created by the platform administrator in Orion
-- The user contacted the platform administrator, expressing its will to join the platform as a producer. The administrator enabled him the "Producer" role for Orion (expressing the desired entity) and the "Seller" role for the marketplace
-
-### Journey 1: Pushing New Data
-
-- The producer
-- The producer uses the access token provided by Keyrock to push new data as a HTTP PATCH request to the context broker
-
-
-
-
-
-## Data Consumer Journeys
 
