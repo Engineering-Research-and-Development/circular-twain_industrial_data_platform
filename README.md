@@ -42,7 +42,8 @@ The data brokering layer is covered by the [**FIWARE Orion Context Broker**](htt
 
 
 ### Data Processing
-**Streampipes??**
+
+- [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. With StreamPipes, the Industrial Data Platform operator can design and implement pipelines useful to map streaming data from diverse Digital Twins to Smart Data Models. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases, including real-time monitoring, anomaly detection, and data integration. StreamPipes emphasizes usability, extensibility, and interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
 
 
 ### Data Persistence
@@ -59,9 +60,8 @@ Moreover, the following components are implemented to make historical data stora
 
 ### Digital Models and Vocabularies
 
-The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures, hence improving data interoperability. Thanks to the smart data models, the data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion. Moreover, *specifications* and *example payloads* in NGSI-LD standard are available to operators to facilitate transformation and mapping operations.
-
-The [**Asset Administration Shell (AAS)**](https://www.iec.ch/ords/f?p=103:38:614011165317679::::FSP_ORG_ID,FSP_APEX_PAGE,FSP_PROJECT_ID:1250,23,103536) serves as the standardized digital depiction of an asset, forming the foundation for the interoperability of components in Industrie 4.0 systems. The AAS can represent a simple component, a machine, or a plant at any level within the equipment hierarchy. Manufacturers provide their customers with standardized digital representations by creating AASs for each asset type and instance. Throughout the lifespan of an asset, the information within its AAS is updated by system designers, asset users, applications, processes, and the asset itself, until its eventual disposal. 
+- The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures, hence improving data interoperability. Thanks to the smart data models, the data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion. Moreover, *specifications* and *example payloads* in NGSI-LD standard are available to operators to facilitate transformation and mapping operations.
+- The [**Asset Administration Shell (AAS)**](https://www.iec.ch/ords/f?p=103:38:614011165317679::::FSP_ORG_ID,FSP_APEX_PAGE,FSP_PROJECT_ID:1250,23,103536) serves as the standardized digital depiction of an asset, forming the foundation for the interoperability of components in Industrie 4.0 systems. The AAS can represent a simple component, a machine, or a plant at any level within the equipment hierarchy. Manufacturers provide their customers with standardized digital representations by creating AASs for each asset type and instance. Throughout the lifespan of an asset, the information within its AAS is updated by system designers, asset users, applications, processes, and the asset itself, until its eventual disposal. 
 
 
 
