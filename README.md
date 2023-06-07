@@ -46,18 +46,18 @@ In this section it is provided a focused overview on the centralized IDP technol
 ### Data Processing
 
 - [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html): an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. With StreamPipes, the Industrial Data Platform operator can design and implement pipelines useful to map streaming data from diverse Digital Twins to Smart Data Models. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases, including real-time monitoring, anomaly detection, and data integration. StreamPipes emphasizes usability, extensibility, and interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
-- [**Python**](https://docs.python.org/3/): Python language is one of the most popular programming language for data analysis and manipulation thanks to the large community support and library repository it provides. Common data analysis and manipulation libraries, such as *pandas*, *numpy*, *scipy*, *scikit-learn* are suitable for the Industrial Data Platform operators to write custom algorithms for transforming and mapping raw digital twin data into Smart Data Model structures.
+- [**Python**](https://docs.python.org/3/): Python language is one of the most popular programming language for data analysis and manipulation thanks to the large community support and library repository it provides. Common data analysis and manipulation libraries, such as *pandas*, *numpy*, *scipy* or *scikit-learn* are suitable for the Industrial Data Platform operators to write custom algorithms for transforming and mapping raw digital twin data into Smart Data Model structures.
 
 
 ### Data Persistence
 
-A set of databases are implicitly implemented in the data persistence layer to support all components. In particular:
-- [**mongoDB**](https://www.mongodb.com/docs/): a non-realtional database that supports the Orion-LD component.
-- [**MySQL**](https://dev.mysql.com/doc/): a relational Database Management System (DBMS) that supports the Keyrock components to store users, applications and policies.
+A set of databases are implicitly implemented in the data persistence layer as support tools for components, however it is possible to leverage them to store other data:
+- [**mongoDB**](https://www.mongodb.com/docs/) is a non-realtional database that supports the Orion-LD component.
+- [**MySQL**](https://dev.mysql.com/doc/) is a relational Database Management System (DBMS) that supports the Keyrock components to store users, applications and policies.
 
 
 Moreover, the following components are implemented to make historical data storage possible:
-- [**FIWARE Mintaka**](https://github.com/FIWARE/mintaka): a Orion-LD component implementing NGSI-LD temporal API.
+- [**FIWARE Mintaka**](https://github.com/FIWARE/mintaka) is an Orion-LD component implementing NGSI-LD temporal API, hence allowing the retrieval of past data.
 - [**TimescaleDB**](https://docs.timescale.com/): a high performance PostgreSQL database designed to work with time-series data.
 
 
@@ -72,8 +72,8 @@ Moreover, the following components are implemented to make historical data stora
 ### Identity and Access Management Layer
 
 The identity and access management layer implements the security technological stack to control access to data. The following components are deployed in the Industrial Data Platform architecture:
-- [**FIWARE KeyRock**](https://fiware-idm.readthedocs.io/en/latest/): is the FIWARE component primarly responsible for Identity Management, thus offering a user the possibility to create an identity-providing account. Keyrock administrators are allowed to create multiple applications, each of which can be enriched with roles associated to particular permissions. In this context, organization might want the Orion-LD Context Broker to be protected from unauthorized access. By doing so, KeyRock would implement the Policy Decision Point (PDP) functionality with PDP Access Control Level 1 (Authentication Access).
-- [**FIWARE-PEP-Proxy Wilma**](https://fiware-pep-proxy.readthedocs.io/en/latest/): Wilma is an implementation of a PEP-proxy, that could be used in the platform in conjunction with KeyRock to come between the user and Orion so that it can intercept their requests and redirect them to the Policy Decision Point. 
+- [**FIWARE KeyRock**](https://fiware-idm.readthedocs.io/en/latest/) is the FIWARE component primarly responsible for Identity Management, thus offering a user the possibility to create an identity-providing account. Keyrock administrators are allowed to create multiple applications, each of which can be enriched with roles associated to particular permissions. In this context, organization might want the Orion-LD Context Broker to be protected from unauthorized access. By doing so, KeyRock would implement the Policy Decision Point (PDP) functionality with PDP Access Control Level 1 (Authentication Access).
+- [**FIWARE-PEP-Proxy Wilma**](https://fiware-pep-proxy.readthedocs.io/en/latest/) implements a PEP-proxy, that could be used in the platform in conjunction with KeyRock to intercept user requests directed to Orion so that it can redirect them to the Policy Decision Point. 
 
 
 
