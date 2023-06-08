@@ -19,20 +19,12 @@ The Circular TwAIn Industrial Data Platform is a technology infrastructure based
 
 ## Industrial Data Platform Components
 
-<p align="center">
- <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/0ce5fe3c-6e3e-452f-a1e4-b3c72c7957fc">
-  <br />
-  <b>Fig. 1:</b> The Industrial Data Platform Architecture (Digital Twin View)
-</p>
-
 
 <p align="center">
  <img width=600 heigth=410 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/156795b6-b771-4cde-915d-97be342e92bd">
   <br />
-  <b>Fig. 2:</b> Mapping with Circular TwAIn Reference Architecture
+  <b>Fig. 1:</b> IDP mapped on Circular TwAIn Reference Architecture
 </p>
-
-
 
 
 The Industrial Data Platform architecture covers the following functionalities:
@@ -43,6 +35,11 @@ The Industrial Data Platform architecture covers the following functionalities:
 
 In this section it is provided a focused overview on the centralized IDP technological stack, explaining how each component fits with the other to implement the desided functionalities.
 
+<p align="center">
+ <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/0ce5fe3c-6e3e-452f-a1e4-b3c72c7957fc">
+  <br />
+  <b>Fig. 2:</b> The Industrial Data Platform Architecture (Digital Twin View)
+</p>
 
 
 ### Data Ingestion and Brokering 
