@@ -36,17 +36,20 @@ The Industrial Data Platform architecture covers the following functionalities:
 In this section it is provided a focused overview on the centralized IDP technological stack, explaining how each component fits with the other to implement the desided functionalities.
 
 
+
 ### Data Ingestion and Brokering 
 
-- [**FIWARE Orion Context Broker**](https://fiware-orion.readthedocs.io/en/master/) implementing the [**NGSI-LD APIs**](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.01_60/gs_cim009v010401p.pdf): a central component of the Industrial Data Platform and it is in charge of allowing users to query and updating context information. By implementing the NGSI-LD standard, it is possible to link entities through relationships, provide property graphs and semantics thanks to the [JSON-LD](https://json-ld.org/) standard, thus leveraging the Smart Data Model Initiative.
-- [**Apache Kafka**](https://kafka.apache.org/documentation/): an open-source distributed streaming platform designed for handling high-volume, real-time data streams. Kafka is based on a publish-subscribe messaging model, where data is organized into topics where data records are published to these topics to be consumed by other components. Kafka offers high throughput and low latency, making it ideal for use cases such as real-time analytics. Kafka also integrates well with other big data frameworks and systems such as Apache Stremapipes, allowing seamless data integration and processing pipelines.
-- [**IDAS Agents**](https://www.fiware.org/catalogue/): a set of FIWARE generic enablers acting as an interface to the IoT world. They are able to gather data from ethereogeneous sources of data using different IoT protocols such as LWM2M over CoaP, JSON or UltraLight over HTTP/MQTT, OPC-UA, Sigfox or LoRaWAN, but also to send actuation commands back, hence convering both communication sides with the physical world.
+- [**FIWARE Orion Context Broker**](https://fiware-orion.readthedocs.io/en/master/) implementing the [**NGSI-LD APIs**](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.01_60/gs_cim009v010401p.pdf), in the Industrial Data Platform context, allows users to query and update context information. By implementing the NGSI-LD and [JSON-LD](https://json-ld.org/) standards, it is possible to link entities through relationships, provide property graphs and semantics, thus enabling the use of the Smart Data Model Initiative.
+- [**Apache Kafka**](https://kafka.apache.org/documentation/): an open-source distributed streaming platform designed for handling high-volume, real-time data streams. Kafka is based on a publish-subscribe messaging model, where data is organized into topics where data records are published to these topics to be consumed by other components. Kafka offers high throughput and low latency, making it ideal for use cases such as real-time analytics. Kafka integrates well with other big data frameworks and systems such as Apache Stremapipes, allowing seamless data integration and processing pipelines.
+- [**IDAS Agents**](https://www.fiware.org/catalogue/): a set of FIWARE generic enablers acting as an interface to the IoT world. They are able to gather data from ethereogeneous sources of data using different IoT protocols but also to send actuation commands back to the physical layer, hence enabling a bidirectional communication with the physical world.
+
 
 
 ### Data Processing
 
 - [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html): an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. With StreamPipes, the Industrial Data Platform operator can design and implement pipelines useful to map streaming data from diverse Digital Twins to Smart Data Models. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases of data integration. StreamPipes emphasizes interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
 - [**Python**](https://docs.python.org/3/): Python language is one of the most popular programming language for data analysis and manipulation thanks to the large community support and library repository it provides. Common data analysis and manipulation libraries, such as *pandas*, *numpy*, *scipy* or *scikit-learn* are suitable for the Industrial Data Platform operators to write custom algorithms for transforming and mapping raw digital twin data into Smart Data Model structures.
+
 
 
 ### Data Persistence
@@ -61,9 +64,10 @@ Moreover, the following components are implemented to make historical data stora
 - [**TimescaleDB**](https://docs.timescale.com/): a high performance PostgreSQL database designed to work with time-series data.
 
 
+
 ### Digital Models and Vocabularies
 
-- The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures, hence improving data interoperability. Thanks to the smart data models, the data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion. Moreover, *specifications* and *example payloads* in NGSI-LD standard are available to operators to facilitate transformation and mapping operations.
+- The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures, hence improving data interoperability. Thanks to the smart data models, a data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion. Moreover, *specifications* and *example payloads* in NGSI-LD standard are available to operators to facilitate transformation and mapping operations.
 - The [**Asset Administration Shell (AAS)**](https://www.iec.ch/ords/f?p=103:38:614011165317679::::FSP_ORG_ID,FSP_APEX_PAGE,FSP_PROJECT_ID:1250,23,103536) serves as the standardized digital depiction of an asset, forming the foundation for the interoperability of components in Industrie 4.0 systems. The AAS can represent a simple component, a machine, or a plant at any level within the equipment hierarchy. Manufacturers provide their customers with standardized digital representations by creating AASs for each asset type and instance. Throughout the lifespan of an asset, the information within its AAS is updated by system designers, asset users, applications, processes, and the asset itself, until its eventual disposal. 
 
 
