@@ -8,7 +8,7 @@
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
 
-The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as a local hub for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to converge in standardized models. Thanks to the Smart Data Models initiative, digital twin data could be easily exchanged with other Industrial Data Space participants through IDS Connectors.
+The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as a *local hub* for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to converge in standardized models: the Industrial Data Platform is deployed at the ends of the industrial data platform network. Thanks to the Smart Data Models initiative, digital twin data could be easily exchanged with other Industrial Data Space participants through IDS Connectors.
 
  
 
@@ -26,7 +26,7 @@ The Circular TwAIn Industrial Data Platform is a technology infrastructure based
 </p>
 
 
-![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/433dfabb-6508-4a57-8308-8608a160bbab)
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/bcfd2cfd-ea84-478b-9da1-6ce275b79616)
 
 
 
@@ -57,11 +57,9 @@ In this section it is provided a focused overview on the centralized IDP technol
 
 ### Data Persistence
 
-A set of databases are implicitly implemented in the data persistence layer as support tools for components, however it is possible to leverage them to store other data:
+A set of databases are implemented in the data persistence layer both as support tools for existing components and to store data:
 - [**mongoDB**](https://www.mongodb.com/docs/) is a non-realtional database that supports the Orion-LD component.
 - [**MySQL**](https://dev.mysql.com/doc/) is a relational Database Management System (DBMS) that supports the Keyrock components to store users, applications and policies.
-
-
 Moreover, the following components are implemented to make historical data storage possible:
 - [**FIWARE Mintaka**](https://github.com/FIWARE/mintaka) is an Orion-LD component implementing NGSI-LD temporal API, hence allowing the retrieval of past data.
 - [**TimescaleDB**](https://docs.timescale.com/): a high performance PostgreSQL database designed to work with time-series data.
