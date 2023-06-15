@@ -26,6 +26,8 @@ The Circular TwAIn Industrial Data Platform is a technology infrastructure based
   <b>Fig. 1:</b> Industrial Data Platform mapped on Circular TwAIn Reference Architecture
 </p>
 
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/c2b09058-958c-4e7d-8872-0db0f08a9238)
+
 
 The Industrial Data Platform architecture covers the following functionalities:
 - the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from the physical world (Physical - Virtual Twinning), as well as to send commands to digital twins (Virtual - Physical Twinning). Meanwhile, the current state of the digital twin is made available to users thanks to the brokering function.
