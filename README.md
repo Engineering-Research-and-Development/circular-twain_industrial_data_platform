@@ -36,12 +36,10 @@ The Industrial Data Platform architecture covers the following functionalities:
 In this section it is provided a focused overview on the centralized IDP technological stack, explaining how each component fits with the other to implement the desided functionalities.
 
 <p align="center">
- <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/0ce5fe3c-6e3e-452f-a1e4-b3c72c7957fc">
+ <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/165cf5dc-3ed9-404d-9615-5ecedc9acb01">
   <br />
   <b>Fig. 2:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
-
-![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/2c560535-f6ef-4606-8fd5-c0d7753e2059)
 
 
 
