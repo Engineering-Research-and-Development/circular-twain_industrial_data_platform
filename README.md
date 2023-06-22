@@ -8,8 +8,12 @@
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
 
-The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as an optional *local hub* for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to adhere to defined models. Hence, the Industrial Data Platform is designed to be deployed at the ends of the industrial data space network to acting as a *Man-in-the-Middle* between digital twins and the Data Space itself. It fits well in cases of brownfield integration, where existing systems need to be connected to a Data Space, as well as in cases of data flow integration from several data sources.
-
+The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as an optional *local hub* for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to adhere to defined models. The Industrial Data Platform is designed to be deployed at the ends of the industrial data space network to acting as a *Man-in-the-Middle* between digital twins and the Data Space itself. 
+Hence, the Industrial Data Platform fits well in the following contexts:
+- **Brownfield Integration**: the Industrial Data Platform can extend existing digital twins with new technologies thanks to its flexibility.
+- **Integration of several data sources**: the platform allows the integration of etherogeneous data sources through Extraction Transformation and Loading (ETL) operations.
+- **Cognition enabling**: the IDP enables digital twins with cognition thanks to batch and real-time data processing.
+- **Need of data space connection**: thanks to deployment of data space connectors, data providers can connect with other data space actors and share their data.
  
 
 ### Table of Content:
