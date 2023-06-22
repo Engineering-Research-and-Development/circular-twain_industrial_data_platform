@@ -8,7 +8,7 @@
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
 
-The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as a *local hub* for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to converge in standardized models: the Industrial Data Platform is deployed at the ends of the industrial data platform network. Thanks to the Smart Data Models initiative, digital twin data could be easily exchanged with other Industrial Data Space participants through IDS Connectors.
+The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as a *local hub* for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to adhere to defined models: the Industrial Data Platform is deployed at the ends of the industrial data platform network. Thanks to the Smart Data Models initiative, digital twin data could be easily exchanged with other Industrial Data Space participants through IDS Connectors.
 
  
 
