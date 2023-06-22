@@ -53,14 +53,14 @@ In this section it is provided a focused overview on the centralized IDP technol
 - [**Apache Kafka**](https://kafka.apache.org/documentation/) is an open-source distributed streaming platform designed for handling high-volume, real-time data streams. Kafka is based on a publish-subscribe messaging model, where data is organized into topics where data records are published to these topics to be consumed by other components. Kafka offers high throughput and low latency, making it ideal for use cases such as real-time analytics. Kafka integrates well with other big data frameworks and systems such as Apache Stremapipes, allowing seamless data integration and processing pipelines.
 - [**IDAS Agents**](https://www.fiware.org/catalogue/) include a set of FIWARE generic enablers acting as an interface to the IoT world. They are able to gather data from ethereogeneous sources of data using different IoT protocols but also to send actuation commands back to the physical layer, hence enabling a bidirectional communication with the physical world.
 - [**FIWARE O2K**](https://github.com/Engineering-Research-and-Development/o2k-connector) The O2K-Connector, developed in Python, is a lightweight connector that facilitates the sharing of context data from the Orion Context Broker to Apache Kafka. This connector operates by subscribing to the Orion Context Broker and subsequently publishing the received context data to a dedicated Kafka topic integrated within the connector itself.
-- [**Custom DT Connectors**] can be deployed to connect with digital twins in a flexible way.
+- **Custom DT Connectors** can be deployed to connect with digital twins in a flexible way.
 
 
 
 ### Data Processing
 
 - [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases of data integration. StreamPipes emphasizes interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
-- [**Apache Spark**]()
+- [**Apache Spark**](https://spark.apache.org/) is a powerful engine suitable for processing batch and real time data in a scalable way. Thanks to its Python API, [PySpark](https://spark.apache.org/docs/latest/api/python/), it is possible to integrate algorithms to enable digital twin cognition.
 
 
 
