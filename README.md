@@ -41,7 +41,7 @@ In this section it is provided a focused overview on the centralized IDP technol
   <b>Fig. 2:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
 
-![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/51120bd9-ebab-46fd-a395-aefc6e4a0189)
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/792ee6b9-4959-4619-84fd-49b7fcd24c7e)
 
 
 ### Data Ingestion and Brokering 
