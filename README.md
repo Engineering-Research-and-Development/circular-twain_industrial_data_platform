@@ -34,7 +34,7 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 
 The Industrial Data Platform architecture covers the following functionalities:
 - the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from existing digital twins, enabling a bi-directional communication with them. The current state of the digital twin is made available to users thanks to the brokering function.
-- the **Data Processing**: *transformation and mapping* techniques are applied to Digital Twin data, allowing users to work on data from etherogeneous sources to build Standardized Data Models. This layer also enables cognition to digital twins, enabling batch and real-time processing on their data.
+- the **Data Processing**: *transformation and mapping* techniques are applied to Digital Twin data, allowing users to work on data from etherogeneous sources while adhering to Data Models. This layer also enables cognition to digital twins, enabling batch and real-time processing on their data.
 - The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing digital twins.
 - The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to the *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
