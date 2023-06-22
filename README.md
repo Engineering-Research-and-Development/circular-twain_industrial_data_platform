@@ -13,7 +13,7 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 - **Brownfield Integration**: the Industrial Data Platform can extend existing digital twins with new technologies thanks to its flexibility.
 - **Integration of several data sources**: the platform allows the integration of etherogeneous data sources through Extraction Transformation and Loading (ETL) operations.
 - **Cognition enabling**: the IDP enables digital twins with cognition thanks to batch and real-time data processing.
-- **Need of data space connection**: thanks to deployment of data space connectors, data providers can connect with other data space actors and share their data.
+- **Data Space connection**: thanks to deployment of data space connectors, data providers can connect with other data space actors and share their data.
  
 
 ### Table of Content:
@@ -34,7 +34,7 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 
 The Industrial Data Platform architecture covers the following functionalities:
 - the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from existing digital twins, enabling a bi-directional communication with them. The current state of the digital twin is made available to users thanks to the brokering function.
-- the **Data Processing**: *transformation and mapping* techniques are applied to Digital Twin data, allowing users to work on data from etherogeneous sources while adhering to Data Models. This layer also enables cognition to digital twins, enabling batch and real-time processing on their data.
+- the **Data Processing**: *transformation and mapping* techniques are applied to Digital Twin data, allowing users to work on data from etherogeneous data sources while adhering to data models. This layer also enables cognition to digital twins, enabling batch and real-time processing on their data.
 - The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing digital twins.
 - The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to the *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
@@ -58,8 +58,8 @@ In this section it is provided a focused overview on the centralized IDP technol
 
 ### Data Processing
 
-- [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. With StreamPipes, the Industrial Data Platform operator can design and implement pipelines useful to map streaming data from diverse Digital Twin sources and make them adhere to pre-defined Smart Data Models. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases of data integration. StreamPipes emphasizes interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
-- [**Apache Spark**]
+- [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases of data integration. StreamPipes emphasizes interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
+- [**Apache Spark**]()
 
 
 
