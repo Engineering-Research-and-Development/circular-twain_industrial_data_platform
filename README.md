@@ -36,15 +36,16 @@ The Industrial Data Platform architecture covers the following functionalities:
 - the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from existing entities, such as physical products, processes, humans and/or their digital twin representation, enabling a bi-directional communication with them. The current state of the digital twin is made available to users thanks to the brokering function.
 - the **Data Processing**: *transformation and mapping* techniques are applied to data, allowing users to work on data from etherogeneous data sources while adhering to data models. This layer also enables cognition to digital twins, enabling batch and real-time processing on their data.
 - The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing entities.
-- The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to the *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
+- The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to both *Asset Administration Shell* and *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
 In this section it is provided a focused overview on the centralized IDP technological stack, explaining how each component fits with the other to implement the desided functionalities.
 
 <p align="center">
- <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/03610a2f-1dac-4d1e-829a-4ae70aecc84e">
+ <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/2d753b0a-5579-4ac0-9ed8-e8a45e7df41f">
   <br />
   <b>Fig. 2:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
+
 
 
 ### Data Ingestion and Brokering 
