@@ -26,7 +26,7 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 
 
 <p align="center">
- <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/dc9205f2-f04c-4a05-8cc1-70a1799a7a7b">
+ <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/cc1e7259-7b9c-4f8c-abee-e82d313a3e8b">
   <br />
   <b>Fig. 1:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
