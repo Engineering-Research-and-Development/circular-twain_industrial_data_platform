@@ -26,10 +26,11 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 
 
 <p align="center">
- <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/14c6c287-284b-488e-a99d-fd1de38223af">
+ <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/61032760-37b0-4ce4-b3e6-e464d4b77363">
   <br />
   <b>Fig. 1:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
+
 
 
 
@@ -57,6 +58,7 @@ In this section it is provided a focused overview on the centralized IDP technol
 - [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases of data integration. StreamPipes emphasizes interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
 - [**Apache Spark**](https://spark.apache.org/) is a powerful engine suitable for processing batch and real time data in a scalable way. Thanks to its Python API, [PySpark](https://spark.apache.org/docs/latest/api/python/), it is possible to integrate efficient python algorithms to enable digital twin cognition.
 - [**FIWARE PySpark Connector**](https://github.com/Engineering-Research-and-Development/fiware-orion-pyspark-connector) is a generic enabler receiving notification from context brokers such as Orion, parsing and injecting incoming data into PySpark algorithms. It helps processing real-time data incoming from southbound layers, returning results directly to the broker.
+- **XAI Open Source Libraries** such
 
 
 
