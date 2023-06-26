@@ -59,7 +59,7 @@ In this section it is provided a focused overview on the centralized IDP technol
 - [**Apache Spark**](https://spark.apache.org/) is a powerful engine suitable for processing batch and real time data in a scalable way. Thanks to its Python API, [PySpark](https://spark.apache.org/docs/latest/api/python/), it is possible to integrate efficient python algorithms to enable digital twin cognition.
 - [**FIWARE PySpark Connector**](https://github.com/Engineering-Research-and-Development/fiware-orion-pyspark-connector) is a generic enabler receiving notification from context brokers such as Orion, parsing and injecting incoming data into PySpark algorithms. It helps processing real-time data incoming from southbound layers, returning results directly to the broker.
 - **XAI Open Source Libraries** such as [**LIME**](https://github.com/marcotcr/lime) or [**SHAP**](https://shap.readthedocs.io/en/latest/) can be used to add explainability to AI algorithms. Explainability enhances human understanding of AI predictions and gives further insights on the analyzed context.
-- The [**Suite5 AI Engine**] is a tool that facilitates the creation of complex AI and XAI pipelines connecting data processing algorithms encapsulated in modules. In the Industrial Data Platform environment it can also implement collaboration functionality, allowing heterogeneously-skilled teams to implement Digital Twins cognition.
+- The **Suite5 AI Engine** is a tool that facilitates the creation of complex AI and XAI pipelines connecting data processing algorithms encapsulated in modules. In the Industrial Data Platform environment it can also implement collaboration functionality, allowing heterogeneously-skilled teams to implement Digital Twins cognition.
 
 
 
