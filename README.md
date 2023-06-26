@@ -8,10 +8,10 @@
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
 
-The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as an optional *local hub* for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to adhere to defined models. The Industrial Data Platform is designed to be deployed at the ends of the industrial data space network to acting as a *Man-in-the-Middle* between digital twins and the Data Space itself. 
+The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as an optional *local hub* for managing and integrating data from heterogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to adhere to defined models. The Industrial Data Platform is designed to be deployed at the ends of the industrial data space network to acting as a *Man-in-the-Middle* between digital twins and the Data Space itself. 
 Hence, the Industrial Data Platform fits well in the following contexts:
 - **Brownfield Integration**: the Industrial Data Platform can extend existing digital twins with new technologies thanks to its flexibility.
-- **Integration of several data sources**: the platform allows the integration of etherogeneous data sources through Extraction Transformation and Loading (ETL) operations.
+- **Integration of several data sources**: the platform allows the integration of heterogeneous data sources through Extraction Transformation and Loading (ETL) operations.
 - **Cognition enabling**: the IDP enables digital twins with cognition thanks to batch and real-time data processing.
 - **Data Space connection**: thanks to deployment of data space connectors, data providers can connect with other data space actors and share their data.
  
@@ -36,7 +36,7 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 
 The Industrial Data Platform architecture covers the following functionalities:
 - the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from existing entities, such as physical products, processes, humans and/or their digital twin representation, enabling a bi-directional communication with them. The platform is also able to integrate in a flexible way with other systems such as NOVAAS or FAAAST. In the end, the brokering components are in charge to provide both the state of digital twins and the results coming from the processing layer. 
-- the **Data Processing**: *transformation and mapping* techniques are applied to data, allowing users to work on data from etherogeneous data sources while adhering to data models. This layer also enables cognition to digital twins, enabling batch and real-time processing on their data.
+- the **Data Processing**: *transformation and mapping* techniques are applied to data, allowing users to work on data from heterogeneous data sources while adhering to data models. This layer also enables cognition to digital twins, enabling batch and real-time processing on their data.
 - The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing entities.
 - The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to both *Asset Administration Shell* and *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
@@ -58,7 +58,8 @@ In this section it is provided a focused overview on the centralized IDP technol
 - [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases of data integration. StreamPipes emphasizes interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
 - [**Apache Spark**](https://spark.apache.org/) is a powerful engine suitable for processing batch and real time data in a scalable way. Thanks to its Python API, [PySpark](https://spark.apache.org/docs/latest/api/python/), it is possible to integrate efficient python algorithms to enable digital twin cognition.
 - [**FIWARE PySpark Connector**](https://github.com/Engineering-Research-and-Development/fiware-orion-pyspark-connector) is a generic enabler receiving notification from context brokers such as Orion, parsing and injecting incoming data into PySpark algorithms. It helps processing real-time data incoming from southbound layers, returning results directly to the broker.
-- **XAI Open Source Libraries** such
+- **XAI Open Source Libraries** such as [**LIME**](https://github.com/marcotcr/lime) or [**SHAP**](https://shap.readthedocs.io/en/latest/) can be used to add explainability to AI algorithms. Explainability enhances human understanding of AI predictions and gives further insights on the analyzed context.
+- The [**Suite5 AI Engine**] is a tool that facilitates the creation of complex AI and XAI pipelines connecting data processing algorithms encapsulated in modules. In the Industrial Data Platform environment it can also implement collaboration functionality, allowing heterogeneously-skilled teams to implement Digital Twins cognition.
 
 
 
