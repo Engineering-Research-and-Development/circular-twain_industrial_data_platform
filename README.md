@@ -24,10 +24,11 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 ## Industrial Data Platform Components
 
 
+
 <p align="center">
- <img width=1200 heigth=820 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/0e0422bd-c2da-40ef-a35f-9392ca2efcba">
- <br />
- <b>Fig. 1:</b> Industrial Data Platform mapped on Circular TwAIn Reference Architecture
+ <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/2d753b0a-5579-4ac0-9ed8-e8a45e7df41f">
+  <br />
+  <b>Fig. 1:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
 
 
@@ -39,13 +40,6 @@ The Industrial Data Platform architecture covers the following functionalities:
 - The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to both *Asset Administration Shell* and *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
 In this section it is provided a focused overview on the centralized IDP technological stack, explaining how each component fits with the other to implement the desided functionalities.
-
-<p align="center">
- <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/2d753b0a-5579-4ac0-9ed8-e8a45e7df41f">
-  <br />
-  <b>Fig. 2:</b> The Industrial Data Platform Architecture (Digital Twin View)
-</p>
-
 
 
 ### Data Ingestion and Brokering 
