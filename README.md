@@ -26,10 +26,11 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 
 
 <p align="center">
- <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/61032760-37b0-4ce4-b3e6-e464d4b77363">
+ <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/dc9205f2-f04c-4a05-8cc1-70a1799a7a7b">
   <br />
   <b>Fig. 1:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
+
 
 
 
@@ -78,7 +79,7 @@ Moreover, the following components are implemented to make historical data stora
 
 - The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative aims to standardize data models under common structures to improve data interoperability. Thanks to the Smart Data Models, a data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion. Moreover, *specifications* and *example payloads* in NGSI-LD standard are available to operators to facilitate transformation and mapping operations.
 - The [**Digital Product Passports (DPP)**](https://hadea.ec.europa.eu/calls-proposals/digital-product-passport_en) are tools under development proposed by the European Commission to create transparency and enable circularity in supply chains. They facilitate the sharing of comprehensive product information, including data on raw material extraction, production, and recycling. DPP will impact companies, and resources are available to understand the regulations and implications through reports provided by WBCSD and BCG. These passports offer a policy perspective, corporate guidance, and actionable steps to prepare for the future of value chains.
-
+- [**Asset Administration Shell (AAS)**](https://reference.opcfoundation.org/I4AAS/v100/docs/4.1) is a widely used standard in Digital Twin systems. In order to make the platform extensible, it is also compliant with AAS, allowing external services (such as FAAAST or NOVAAS) to use some of the functionalities provided by the Industrial Data Platform, should they need it. 
 
 
 
