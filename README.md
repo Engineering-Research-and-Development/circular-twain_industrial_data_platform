@@ -8,8 +8,12 @@
 # Circular TwAIn Industrial Data Platform (IDP) Architecture
 
 
-The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as a *local hub* for managing and integrating data from etherogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to converge in standardized models: the Industrial Data Platform is deployed at the ends of the industrial data platform network. Thanks to the Smart Data Models initiative, digital twin data could be easily exchanged with other Industrial Data Space participants through IDS Connectors.
-
+The Circular TwAIn Industrial Data Platform is a technology infrastructure based on open source components enabling ingestion, transformation, mapping and brokering of digital twin data generated within an industrial environment. It serves as an optional *local hub* for managing and integrating data from heterogeneous sources, such as sensors, machines, devices, and production systems, ensuring data to adhere to defined models. The Industrial Data Platform is designed to be deployed at the ends of the industrial data space network to acting as a *Man-in-the-Middle* between digital twins and the Data Space itself. 
+Hence, the Industrial Data Platform fits well in the following contexts:
+- **Brownfield Integration**: the Industrial Data Platform can extend existing digital twins with new technologies thanks to its flexibility, without intaking their previous implementation.
+- **Integration of several data sources**: the platform allows the integration of heterogeneous data sources through Extraction Transformation and Loading (ETL) operations.
+- **Cognition enabling**: the IDP enables digital twins with cognition thanks to batch and real-time data processing.
+- **Data Space connection**: thanks to deployment of data space connectors, data providers can connect with other data space actors and share their data.
  
 
 ### Table of Content:
@@ -20,41 +24,43 @@ The Circular TwAIn Industrial Data Platform is a technology infrastructure based
 ## Industrial Data Platform Components
 
 
+
 <p align="center">
- <img width=1200 heigth=820 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/0e0422bd-c2da-40ef-a35f-9392ca2efcba">
- <br />
- <b>Fig. 1:</b> Industrial Data Platform mapped on Circular TwAIn Reference Architecture
+ <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/cc1e7259-7b9c-4f8c-abee-e82d313a3e8b">
+  <br />
+  <b>Fig. 1:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
+
+
 
 
 
 The Industrial Data Platform architecture covers the following functionalities:
-- the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from the physical world (Physical - Virtual Twinning), as well as to send commands to digital twins (Virtual - Physical Twinning). Meanwhile, the current state of the digital twin is made available to users thanks to the brokering function.
-- the **Data Processing**: *transformation and mapping* techniques are applied to raw data, allowing users to work on raw sensor data from etherogeneous sources to build Standardized Data Models.
-- The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing digital twins.
-- The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to the *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
+- the **Data Ingestion and Brokering**: the Industrial Data Platform is able to receive data from existing entities, such as physical products, processes, humans and/or their digital twin representation, enabling a bi-directional communication with them. The platform is also able to integrate in a flexible way with other systems such as NOVAAS or FAAAST. In the end, the brokering components are in charge to provide both the state of digital twins and the results coming from the processing layer. 
+- the **Data Processing**: *transformation and mapping* techniques are applied to data, allowing users to work on data from heterogeneous data sources while adhering to data models. This layer also enables cognition to digital twins, enabling batch and real-time processing on their data.
+- The **Data Persistence**: whenever necessary, the Industrial Data Platform is designed to persist historical data, in particular when time-series data are involved in fast-changing entities.
+- The **Data Models and Vocabularies**: finally, the Industrial Data Platform operators are provided with a comprehensive range of standardized data models and metadata vocabularies thanks to both *Asset Administration Shell* and *FIWARE Smart Data Models* initiative. This crucial provision enables the facilitation of seamless communication within an Industrial Data Space environment.
 
 In this section it is provided a focused overview on the centralized IDP technological stack, explaining how each component fits with the other to implement the desided functionalities.
-
-<p align="center">
- <img width=485 heigth=800 src="https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/assets/103200695/8fe0a076-c925-4051-a4f1-e55f715ff06e">
-  <br />
-  <b>Fig. 2:</b> The Industrial Data Platform Architecture (Digital Twin View)
-</p>
 
 
 ### Data Ingestion and Brokering 
 
 - [**FIWARE Orion Context Broker**](https://fiware-orion.readthedocs.io/en/master/) implementing the [**NGSI-LD APIs**](https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.01_60/gs_cim009v010401p.pdf), in the Industrial Data Platform context, allows users to query and update context information. By implementing the NGSI-LD and [JSON-LD](https://json-ld.org/) standards, it is possible to link entities through relationships, provide property graphs and semantics, thus enabling the use of the Smart Data Model Initiative.
 - [**Apache Kafka**](https://kafka.apache.org/documentation/) is an open-source distributed streaming platform designed for handling high-volume, real-time data streams. Kafka is based on a publish-subscribe messaging model, where data is organized into topics where data records are published to these topics to be consumed by other components. Kafka offers high throughput and low latency, making it ideal for use cases such as real-time analytics. Kafka integrates well with other big data frameworks and systems such as Apache Stremapipes, allowing seamless data integration and processing pipelines.
-- [**IDAS Agents**](https://www.fiware.org/catalogue/) include a set of FIWARE generic enablers acting as an interface to the IoT world. They are able to gather data from ethereogeneous sources of data using different IoT protocols but also to send actuation commands back to the physical layer, hence enabling a bidirectional communication with the physical world.
+- [**IDAS Agents**](https://www.fiware.org/catalogue/) include a set of FIWARE generic enablers acting as an interface to the IoT world. They are able to gather data from ethereogeneous sources of data using different IoT protocols but also to send commands back to the observabnle layer, hence enabling a bidirectional communication with both digital twins and physical entities.
+- [**FIWARE O2K**](https://github.com/Engineering-Research-and-Development/o2k-connector) The O2K-Connector, developed in Python, is a lightweight connector that facilitates the sharing of context data from the Orion Context Broker to Apache Kafka. This connector operates by subscribing to the Orion Context Broker and subsequently publishing the received context data to a dedicated Kafka topic integrated within the connector itself.
+- **Custom DT Connectors** can be deployed to connect with digital twins in a flexible way, allowing the integration of other DT systems and services such as NOVAAS or FAAAST.
 
 
 
 ### Data Processing
 
-- [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. With StreamPipes, the Industrial Data Platform operator can design and implement pipelines useful to map streaming data from diverse Digital Twins to Smart Data Models. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases of data integration. StreamPipes emphasizes interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
-- [**Python**](https://docs.python.org/3/) is one of the most popular programming language for data analysis and manipulation thanks to the large community support and library repository it provides. Common data analysis and manipulation libraries, such as *pandas*, *numpy*, *scipy* or *scikit-learn* are suitable for the Industrial Data Platform operators to write custom algorithms for transforming and mapping raw digital twin data into Smart Data Model structures.
+- [**Apache StreamPipes**](https://streampipes.apache.org/docs/docs/user-guide-introduction.html) is an open-source IoT Toolbox designed for building and managing real-time data pipelines in a simple and flexible manner. It provides a visual programming interface that allows users to easily create data pipelines by connecting various data sources, processors, and sinks. It offers a wide range of connectors, processors, and visualization components, making it suitable for various use cases of data integration. StreamPipes emphasizes interoperability, enabling users to efficiently handle streaming data workflows and derive valuable insights from their data streams.
+- [**Apache Spark**](https://spark.apache.org/) is a powerful engine suitable for processing batch and real time data in a scalable way. Thanks to its Python API, [PySpark](https://spark.apache.org/docs/latest/api/python/), it is possible to integrate efficient python algorithms to enable digital twin cognition.
+- [**FIWARE PySpark Connector**](https://github.com/Engineering-Research-and-Development/fiware-orion-pyspark-connector) is a generic enabler receiving notification from context brokers such as Orion, parsing and injecting incoming data into PySpark algorithms. It helps processing real-time data incoming from southbound layers, returning results directly to the broker.
+- **XAI Open-Source Libraries** such as [**LIME**](https://github.com/marcotcr/lime) or [**SHAP**](https://shap.readthedocs.io/en/latest/) can be used to add explainability to AI algorithms. Explainability enhances human understanding of AI predictions and gives further insights on the analyzed context.
+- The **Suite5 AI Engine** is a tool that facilitates the creation of complex AI and XAI pipelines connecting data processing algorithms encapsulated in modules. In the Industrial Data Platform environment, it can also enhance collaboration, allowing heterogeneously-skilled teams to implement Digital Twins cognition.
 
 
 
@@ -71,10 +77,9 @@ Moreover, the following components are implemented to make historical data stora
 
 ### Digital Models and Vocabularies
 
-- The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative results particularly suitable in the digital twin context since it aims to standardize data models under common structures to improve data interoperability. Thanks to the Smart Data Models, a data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion. Moreover, *specifications* and *example payloads* in NGSI-LD standard are available to operators to facilitate transformation and mapping operations.
-- The [**Asset Administration Shell (AAS)**](https://www.iec.ch/ords/f?p=103:38:614011165317679::::FSP_ORG_ID,FSP_APEX_PAGE,FSP_PROJECT_ID:1250,23,103536) serves as the standardized digital depiction of an asset, forming the foundation for the interoperability of components in Industrie 4.0 systems. The AAS can represent a simple component, a machine, or a plant at any level within the equipment hierarchy. Manufacturers provide their customers with standardized digital representations by creating AASs for each asset type and instance. Throughout the lifespan of an asset, the information within its AAS is updated by system designers, asset users, applications, processes, and the asset itself, until its eventual disposal.
+- The [**Smart Data Models Initiative**](https://www.fiware.org/smart-data-models/) implements the digital models and vocabulary vertical of the Circular TwAIn reference architecture. This initiative aims to standardize data models under common structures to improve data interoperability. Thanks to the Smart Data Models, a data producer can refer to common structures for their digital twin, making available their *schema* (or a part of it) in Orion. Moreover, *specifications* and *example payloads* in NGSI-LD standard are available to operators to facilitate transformation and mapping operations.
 - The [**Digital Product Passports (DPP)**](https://hadea.ec.europa.eu/calls-proposals/digital-product-passport_en) are tools under development proposed by the European Commission to create transparency and enable circularity in supply chains. They facilitate the sharing of comprehensive product information, including data on raw material extraction, production, and recycling. DPP will impact companies, and resources are available to understand the regulations and implications through reports provided by WBCSD and BCG. These passports offer a policy perspective, corporate guidance, and actionable steps to prepare for the future of value chains.
-
+- [**Asset Administration Shell (AAS)**](https://reference.opcfoundation.org/I4AAS/v100/docs/4.1) is a widely used standard in Digital Twin systems. In order to make the platform extensible, it is also compliant with AAS, allowing external services (such as FAAAST or NOVAAS) to use some of the functionalities provided by the Industrial Data Platform, should they need it. 
 
 
 
