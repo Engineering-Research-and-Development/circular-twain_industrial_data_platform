@@ -4,13 +4,10 @@
 import json
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from pyspark import SparkContext, SparkConf
 from pyspark.streaming import StreamingContext
-from pyspark.storagelevel import StorageLevel
 
 from threading import Thread
 import socket
-import time
 from datetime import datetime
 import requests
 
