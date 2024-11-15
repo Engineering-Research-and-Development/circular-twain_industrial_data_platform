@@ -19,17 +19,12 @@ services:
     command: -dbURI mongodb://mongo
     depends_on:
       - mongo
-  iotcarsrv:
-    hostname: iotcarsrv
-    image: iotagent4fiware/opcuacarsrv:latest
-    ports:
-      - "5001:5001"
+  
 
   opcua:
     image: iotagent4fiware/iotagent-opcua:latest
     depends_on:
       - mongo
-      - iotcarsrv
       - orion
     ports:
       - "4041:4041"
@@ -62,7 +57,7 @@ services:
       - "IOTA_EXTENDED_FORBIDDEN_CHARACTERS=[]"
       - "IOTA_AUTOPROVISION=true"
       - "IOTA_EXPRESS_LIMIT=50mb"
-      - "IOTA_OPCUA_ENDPOINT=opc.tcp://iotcarsrv:5001/UA/PetroPlant"
+      - "IOTA_OPCUA_ENDPOINT=opc.tcp://[IP]:5001/UA/PetroPlant"
       - "IOTA_OPCUA_SECURITY_MODE=None"
       - "IOTA_OPCUA_SECURITY_POLICY=None"
       #- "IOTA_OPCUA_SECURITY_USERNAME=null"
