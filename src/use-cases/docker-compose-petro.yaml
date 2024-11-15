@@ -52,7 +52,7 @@ services:
       - "IOTA_MONGO_HOST=mongo"
       - "IOTA_MONGO_PORT=27017"
       - "IOTA_MONGO_DB=iotagent_opcua"
-      - "IOTA_SERVICE=opcua_car"
+      - "IOTA_SERVICE=opcua_petro"
       - "IOTA_SUBSERVICE=/demo"
       - "IOTA_PROVIDER_URL=http://iotagent-opcua:4041"
       - "IOTA_DEVICEREGDURATION=P20Y"
