@@ -20,8 +20,6 @@ services:
     depends_on:
       - mongo
 
-
-
   spark-master:
     image: quay.io/fiware/pyspark-connector
     container_name: pyspark_master
@@ -41,8 +39,7 @@ services:
     logging:
       options:
           max-size : "200m"
-      
-      
+
   spark-worker-a:
     image: quay.io/fiware/pyspark-connector
     container_name: pyspark_worker_a
@@ -68,14 +65,10 @@ services:
     logging:
       options:
           max-size : "200m"        
-        
- 
+
 networks:
   pyspark_net:
     ipam:
       driver: default
       config:
         - subnet: 172.28.0.0/16
-      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
-      - SPARK_SSL_ENABLED=no
-      - SPARK_USER=spark
