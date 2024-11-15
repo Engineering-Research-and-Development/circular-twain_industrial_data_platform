@@ -46,7 +46,7 @@ services:
       - "IOTA_CB_NGSIVERSION=v2"
       - "IOTA_CB_NGSILDCONTEXT=https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
       - "IOTA_CB_SERVICE=petro"
-      - "IOTA_CB_SUBSERVICE=/demo"
+      - "IOTA_CB_SUBSERVICE=/plant"
       - "IOTA_NORTH_PORT=4041"
       - "IOTA_REGISTRY_TYPE=mongo"
       - "IOTA_MONGO_HOST=mongo"
