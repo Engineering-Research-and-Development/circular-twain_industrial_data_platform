@@ -6,7 +6,7 @@
 
 # Circular TwAIn Industrial Data Platform (IDP)
 
-![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/imgs/blueprints.png)
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/main/docs/imgs/blueprints.png)
 
 
 <div align="justify">
