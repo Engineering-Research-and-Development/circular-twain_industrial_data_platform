@@ -20,9 +20,9 @@ The infrastructure incorporates a robust set of open-source technologies, select
 
 ### Documentation Contents:
 - [Industrial Data Platform Architecture](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/Architecture%26Implementation.md)
-- [Battery Blueprint]()
-- [WEEE Blueprint]()
-- [Petrochemical Blueprint]()
+- [Battery Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/battery.md)
+- [WEEE Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/weee.md)
+- [Petrochemical Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/petrochemical.md)
 
 
 
