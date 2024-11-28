@@ -15,10 +15,10 @@ The Circular TwAIn Industrial Data Platform (IDP) is an open-source infrastructu
 
 
 ### Documentation Contents:
-- [Industrial Data Platform Architecture](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/Architecture%26Implementation.md)
-- [Battery Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/battery.md)
-- [WEEE Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/weee.md)
-- [Petrochemical Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/IDP-evolution/docs/petrochemical.md)
+- [Industrial Data Platform Architecture](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/main/docs/Architecture%26Implementation.md)
+- [Battery Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/main/docs/battery.md)
+- [WEEE Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/main/docs/weee.md)
+- [Petrochemical Blueprint](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/main/docs/petrochemical.md)
 
 
 ## License
