@@ -1,0 +1,65 @@
+{
+    "types": {
+        "Device": {
+            "active": [
+                {
+                    "name": "Battery_PackTemperature_degC",
+                    "type": "Double"
+                },
+                {
+                    "name": "Battery_PackCurr_Internal_Resistance_Pack",
+                    "type": "Double"
+                },
+                {
+                    "name": "Battery_PackTime_spent_above_temperature",
+                    "type": "Double"
+                },
+                {
+                    "name": "Battery_PackTime_spent_below_temperature",
+                    "type": "Double"
+                }
+            ],
+            "lazy": [],
+            "commands": []
+        }
+    },
+    "contexts": [
+        {
+            "id": "age01_Battery_Pack",
+            "type": "Device",
+            "mappings": [
+                {
+                    "ocb_id": "Battery_PackTemperature_degC",
+                    "opcua_id": "ns=2;i=2",
+                    "object_id": null,
+                    "inputArguments": []
+                },
+                {
+                    "ocb_id": "Battery_PackCurr_Internal_Resistance_Pack",
+                    "opcua_id": "ns=2;i=3",
+                    "object_id": null,
+                    "inputArguments": []
+                },
+                {
+                    "ocb_id": "Battery_PackTime_spent_above_temperature",
+                    "opcua_id": "ns=2;i=4",
+                    "object_id": null,
+                    "inputArguments": []
+                },
+                {
+                    "ocb_id": "Battery_PackTime_spent_below_temperature",
+                    "opcua_id": "ns=2;i=5",
+                    "object_id": null,
+                    "inputArguments": []
+                }
+            ]
+        }
+    ],
+    "contextSubscriptions": [
+        {
+            "id": "age01_Battery_Pack",
+            "type": "Device",
+            "mappings": []
+        }
+    ]
+}

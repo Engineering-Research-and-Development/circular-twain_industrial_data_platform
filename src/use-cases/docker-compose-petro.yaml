@@ -1,0 +1,131 @@
+services:
+  aasx-server:
+    container_name: aasx-server
+    image: docker.io/adminshellio/aasx-server-blazor-for-demo:main
+    ports:
+      - "5005:5005"
+    environment:
+      - Kestrel__Endpoints__Http__Url=http://*:5001
+    command: --no-security
+
+  mongo:
+    image: mongo:6
+    command: --nojournal
+
+  orion:
+    image: fiware/orion
+    ports:
+      - "1026:1026"
+    command: -dbURI mongodb://mongo
+    depends_on:
+      - mongo
+  
+
+  opcua:
+    image: iotagent4fiware/iotagent-opcua:latest
+    depends_on:
+      - mongo
+      - orion
+    ports:
+      - "4041:4041"
+      - "9229:9229"
+    environment:
+      - "CONFIGURATION_TYPE=auto"
+      - "CONFIG_RETRIEVAL=false"
+      - "DEFAULT_KEY=iot"
+      - "DEFAULT_TRANSPORT=OPCUA"
+      - "IOTA_LOGLEVEL=DEBUG"
+      - "IOTA_TIMESTAMP=true"
+      - "IOTA_CB_HOST=orion"
+      - "IOTA_CB_PORT=1026"
+      - "IOTA_CB_NGSIVERSION=v2"
+      - "IOTA_CB_NGSILDCONTEXT=https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+      - "IOTA_CB_SERVICE=petro"
+      - "IOTA_CB_SUBSERVICE=/plant"
+      - "IOTA_NORTH_PORT=4041"
+      - "IOTA_REGISTRY_TYPE=mongo"
+      - "IOTA_MONGO_HOST=mongo"
+      - "IOTA_MONGO_PORT=27017"
+      - "IOTA_MONGO_DB=iotagent_opcua"
+      - "IOTA_SERVICE=opcua_petro"
+      - "IOTA_SUBSERVICE=/demo"
+      - "IOTA_PROVIDER_URL=http://iotagent-opcua:4041"
+      - "IOTA_DEVICEREGDURATION=P20Y"
+      - "IOTA_DEFAULTTYPE=Device"
+      - "IOTA_DEFAULTRESOURCE=/iot/opcua"
+      - "IOTA_EXPLICITATTRS=true"
+      - "IOTA_EXTENDED_FORBIDDEN_CHARACTERS=[]"
+      - "IOTA_AUTOPROVISION=true"
+      - "IOTA_EXPRESS_LIMIT=50mb"
+      - "IOTA_OPCUA_ENDPOINT=opc.tcp://[IP]:5001/UA/PetroPlant"
+      - "IOTA_OPCUA_SECURITY_MODE=None"
+      - "IOTA_OPCUA_SECURITY_POLICY=None"
+      #- "IOTA_OPCUA_SECURITY_USERNAME=null"
+      #- "IOTA_OPCUA_SECURITY_PASSWORD=null"
+      - "IOTA_OPCUA_UNIQUE_SUBSCRIPTION=false"
+      - "IOTA_OPCUA_SUBSCRIPTION_NOTIFICATIONS_PER_PUBLISH=1000"
+      - "IOTA_OPCUA_SUBSCRIPTION_PUBLISHING_ENABLED=true"
+      - "IOTA_OPCUA_SUBSCRIPTION_REQ_LIFETIME_COUNT=100"
+      - "IOTA_OPCUA_SUBSCRIPTION_REQ_MAX_KEEP_ALIVE_COUNT=10"
+      - "IOTA_OPCUA_SUBSCRIPTION_REQ_PUBLISHING_INTERVAL=1000"
+      - "IOTA_OPCUA_SUBSCRIPTION_PRIORITY=128"
+      - "IOTA_OPCUA_MT_POLLING=false"
+      - "IOTA_OPCUA_MT_AGENT_ID=age01_"
+      - "IOTA_OPCUA_MT_ENTITY_ID=age01_Petro"
+      - "IOTA_OPCUA_MT_ENTITY_TYPE=Device"
+      - "IOTA_OPCUA_MT_NAMESPACE_IGNORE=0,7"
+      - "IOTA_OPCUA_MT_STORE_OUTPUT=true"
+
+
+  spark-master:
+    image: quay.io/fiware/pyspark-connector
+    container_name: pyspark_master
+    ports:
+      - "9090:8080"
+      - "7077:7077"
+    volumes:
+       - ./apps:/opt/spark-apps
+       - ./data:/opt/spark-data
+       - ./jobs:/opt/spark/data
+    environment:
+      - SPARK_LOCAL_IP=spark-master
+      - SPARK_WORKLOAD=master
+    networks:
+      pyspark_net:
+        ipv4_address: 172.28.1.1
+    logging:
+      options:
+          max-size : "200m"
+
+  spark-worker-a:
+    image: quay.io/fiware/pyspark-connector
+    container_name: pyspark_worker_a
+    ports:
+      - "9091:8080"
+      - "7000:7000"
+    depends_on:
+      - spark-master
+    environment:
+      - SPARK_MASTER=spark://spark-master:7077
+      - SPARK_WORKER_CORES=1
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_DRIVER_MEMORY=1G
+      - SPARK_EXECUTOR_MEMORY=1G
+      - SPARK_WORKLOAD=worker
+      - SPARK_LOCAL_IP=spark-worker-a
+    volumes:
+       - ./apps:/opt/spark-apps:rw
+       - ./data:/opt/spark-data:rw
+    networks:
+      pyspark_net:
+        ipv4_address: 172.28.1.2
+    logging:
+      options:
+          max-size : "200m"        
+
+networks:
+  pyspark_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16

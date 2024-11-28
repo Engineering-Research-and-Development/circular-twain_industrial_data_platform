@@ -1,0 +1,126 @@
+{
+  "@context" : {
+    "ids" : "https://w3id.org/idsa/core/",
+    "idsc" : "https://w3id.org/idsa/code/"
+  },
+  "@type" : "ids:BaseConnector",
+  "@id" : "http://w3id.org/engrd/connector/provider",
+  "ids:description" : [ {
+    "@value" : "Receiver Connector description",
+    "@type" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "ids:title" : [ {
+    "@value" : "Receiver Connector title",
+    "@type" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "ids:inboundModelVersion" : [ "4.0.0", "4.1.0", "4.1.2", "4.2.0", "4.2.1", "4.2.2", "4.2.3", "4.2.4", "4.2.5", "4.2.6", "4.2.7" ],
+  "ids:resourceCatalog" : [ {
+    "@type" : "ids:ResourceCatalog",
+    "@id" : "https://w3id.org/idsa/autogen/resourceCatalog/0d8f6a6a-cc81-49f5-9af8-67d64718ca55",
+    "ids:offeredResource" : [ {
+      "@type" : "ids:DataResource",
+      "@id" : "https://w3id.org/idsa/autogen/dataResource/d956db96-2383-4cb1-93df-c064759cc6b7",
+      "ids:language" : [ {
+        "@id" : "https://w3id.org/idsa/code/EN"
+      }, {
+        "@id" : "https://w3id.org/idsa/code/IT"
+      } ],
+      "ids:version" : "1.0.0",
+      "ids:description" : [ {
+        "@value" : "AAS Battery passport",
+        "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      } ],
+      "ids:title" : [ {
+        "@value" : "Battery Status",
+        "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      } ],
+      "ids:representation" : [ {
+        "@type" : "ids:TextRepresentation",
+        "@id" : "https://w3id.org/idsa/autogen/textRepresentation/e2959953-d2b6-44d3-9a4e-8907ac34b12e",
+        "ids:instance" : [ {
+          "@type" : "ids:Artifact",
+          "@id" : "http://w3id.org/engrd/connector/artifact/battery",
+          "ids:creationDate" : {
+            "@value" : "2024-01-19T14:34:09.819+01:00",
+            "@type" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+          }
+        } ],
+        "ids:language" : {
+          "@id" : "https://w3id.org/idsa/code/EN"
+        },
+        "ids:created" : {
+          "@value" : "2024-01-19T13:34:10.182Z",
+          "@type" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        }
+      } ],
+      "ids:contractOffer" : [ {
+        "@type" : "ids:ContractOffer",
+        "@id" : "https://w3id.org/idsa/autogen/contractOffer/30346194-c131-444d-b2e9-6ba32612d292",
+        "ids:permission" : [ {
+          "@type" : "ids:Permission",
+          "@id" : "https://w3id.org/idsa/autogen/permission/3b1c1e07-966a-4b00-a2d5-51c4ef4db1db",
+          "ids:target" : {
+            "@id" : "http://w3id.org/engrd/connector/artifact/battery"
+          },
+          "ids:description" : [ {
+            "@value" : "provide-access",
+            "@type" : "http://www.w3.org/2001/XMLSchema#string"
+          } ],
+          "ids:title" : [ {
+            "@value" : "Example Usage Policy",
+            "@type" : "http://www.w3.org/2001/XMLSchema#string"
+          } ],
+          "ids:action" : [ {
+            "@id" : "https://w3id.org/idsa/code/USE"
+          } ]
+        } ],
+        "ids:provider" : {
+          "@id" : "http://w3id.org/engrd/connector/provider"
+        },
+        "ids:contractStart" : {
+          "@value" : "2024-01-19T13:34:09.912Z",
+          "@type" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        },
+        "ids:contractDate" : {
+          "@value" : "2024-01-19T13:34:10.169Z",
+          "@type" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+        }
+      } ],
+      "ids:created" : {
+        "@value" : "2024-01-19T14:34:10.149+01:00",
+        "@type" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "ids:keyword" : [ {
+        "@value" : "Engineering Ingegneria Informatica SpA",
+        "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      }, {
+        "@value" : "TRUEConnector",
+        "@type" : "http://www.w3.org/2001/XMLSchema#string"
+      } ],
+      "ids:modified" : {
+        "@value" : "2024-01-19T14:34:10.149+01:00",
+        "@type" : "http://www.w3.org/2001/XMLSchema#dateTimeStamp"
+      },
+      "ids:contentType" : {
+        "@id" : "https://w3id.org/idsa/code/SCHEMA_DEFINITION"
+      }
+    } ]
+  } ],
+  "ids:hasDefaultEndpoint" : {
+    "@type" : "ids:ConnectorEndpoint",
+    "@id" : "https://87.116.160.168:8444/",
+    "ids:accessURL" : {
+      "@id" : "https://87.116.160.168:8444/"
+    }
+  },
+  "ids:securityProfile" : {
+    "@id" : "https://w3id.org/idsa/code/BASE_SECURITY_PROFILE"
+  },
+  "ids:maintainer" : {
+    "@id" : "http://receiver.maintainerURI.com"
+  },
+  "ids:curator" : {
+    "@id" : "http://receiver.curatorURI.com"
+  },
+  "ids:outboundModelVersion" : "4.2.7"
+}

@@ -1,0 +1,95 @@
+version: "3"
+
+services:
+  iot-agent:
+    image: iotagent4fiware/iotagent-opcua:latest
+    hostname: iotagent-opcua
+    depends_on:
+      - mongodb
+      - orion
+    networks:
+      - hostnet
+    ports:
+      - "4041:4041"
+      - "9229:9229"
+    environment:
+      - "IOTA_CB_HOST=orion"
+      - "IOTA_CB_PORT=1026"
+      - "IOTA_NORTH_PORT=4041"
+      - "IOTA_REGISTRY_TYPE=mongodb"
+      - "IOTA_MONGO_HOST=mongodb"
+      - "IOTA_MONGO_PORT=27017"
+      - "IOTA_MONGO_DB=iotagent_opcua"
+      - "IOTA_PROVIDER_URL=http://iotagent-opcua:4041"
+      - "IOTA_OPCUA_ENDPOINT=opc.tcp://10.0.2.15:4840/freeopcua/server/"
+      - "IOTA_OPCUA_SECURITY_MODE=None"
+      - "IOTA_OPCUA_SECURITY_POLICY=None"
+      #- "IOTA_OPCUA_SECURITY_USERNAME=null"
+      #- "IOTA_OPCUA_SECURITY_PASSWORD=null"
+      - "IOTA_OPCUA_UNIQUE_SUBSCRIPTION=false"
+      - "IOTA_OPCUA_SUBSCRIPTION_NOTIFICATIONS_PER_PUBLISH=1000"
+      - "IOTA_OPCUA_SUBSCRIPTION_PUBLISHING_ENABLED=true"
+      - "IOTA_OPCUA_SUBSCRIPTION_REQ_LIFETIME_COUNT=100"
+      - "IOTA_OPCUA_SUBSCRIPTION_REQ_MAX_KEEP_ALIVE_COUNT=10"
+      - "IOTA_OPCUA_SUBSCRIPTION_REQ_PUBLISHING_INTERVAL=1000"
+      - "IOTA_OPCUA_SUBSCRIPTION_PRIORITY=128"
+      - "IOTA_EXTENDED_FORBIDDEN_CHARACTERS=[]"
+      - "IOTA_OPCUA_MT_POLLING=false"
+      - "IOTA_OPCUA_MT_AGENT_ID=age01_"
+      - "IOTA_OPCUA_MT_ENTITY_ID=age01_Battery_Pack"
+      - "IOTA_OPCUA_MT_ENTITY_TYPE=Device"
+      - "IOTA_OPCUA_MT_NAMESPACE_IGNORE=0,7"
+      - "IOTA_OPCUA_MT_STORE_OUTPUT=true"
+    volumes:
+      - ./conf:/opt/iotagent-opcua/conf
+
+
+  mongodb:
+    image: mongo:4.2
+    hostname: mongodb
+    networks:
+      - hostnet
+    expose:
+      - "27017"
+    command: --bind_ip_all
+    volumes:
+      - mongodb:/data
+
+  ################ OCB ################
+
+  orion:
+    hostname: orion
+    image: fiware/orion:latest
+    networks:
+      - hostnet
+      - ocbnet
+    ports:
+      - "1026:1026"
+    depends_on:
+      - orion_mongo
+    command: -statCounters -dbhost orion_mongo -logLevel INFO
+
+  
+  orion_mongo:
+    hostname: orion_mongo
+    image: mongo:4.2
+    networks:
+      - ocbnet
+    ports:
+      - "27017:27017"
+    volumes:
+      - orion_mongo_data:/data/db
+      - orion_mongo_conf:/data/configdb
+    command: --nojournal
+    
+  
+volumes:
+  orion_mongo_data:
+  orion_mongo_conf:
+  mongodb:
+
+
+networks:
+  hostnet:
+  iotnet:
+  ocbnet:

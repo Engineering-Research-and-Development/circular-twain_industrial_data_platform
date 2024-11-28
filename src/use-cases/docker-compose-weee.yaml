@@ -1,0 +1,166 @@
+name: ctw-idp_weee
+
+volumes:
+  certs:
+    driver: local
+  esdata01:
+    driver: local
+  kibanadata:
+    driver: local
+  metricbeatdata01:
+    driver: local
+  filebeatdata01:
+    driver: local
+  logstashdata01:
+    driver: local
+
+networks:
+  default:
+    name: weee
+    external: false
+
+services:
+  kafka:
+    image: apache/kafka:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"
+      - "9093:9093"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://localhost:9092,CONTROLLER://localhost:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_NUM_PARTITIONS: 3
+
+  tensorflow:
+    image: tensorflow/tensorflow:latest-jupyter
+    container_name: tensorflow_notebooks
+    ports:
+      - "8888:8888"
+    #volumes:
+    #  - ./notebooks:/tf/notebooks
+
+  elastic:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    container_name: elastic_search
+    #volumes:
+    #  - certs:/usr/share/elasticsearch/config/certs
+    user: "0"
+    environment:
+      # Project namespace (defaults to the current folder name if not set)
+      # COMPOSE_PROJECT_NAME=myproject
+      # Password for the 'elastic' user (at least 6 characters)
+      ELASTIC_PASSWORD: elastic_pass
+      # Password for the 'kibana_system' user (at least 6 characters)
+      KIBANA_PASSWORD: kibana_pass
+      # Version of Elastic products
+      STACK_VERSION: 8.7.1
+      # Set the cluster name
+      CLUSTER_NAME: weee-cluster
+      # Set to 'basic' or 'trial' to automatically start the 30-day trial
+      LICENSE: basic
+      #LICENSE=trial
+      # Port to expose Elasticsearch HTTP API to the host
+      ES_PORT: 9200
+      # Port to expose Kibana to the host
+      KIBANA_PORT: 5601
+      # Increase or decrease based on the available host memory (in bytes)
+      ES_MEM_LIMIT: 1073741824
+      KB_MEM_LIMIT: 1073741824
+      LS_MEM_LIMIT: 1073741824
+      # SAMPLE Predefined Key only to be used in POC environments
+      ENCRYPTION_KEY: c34d38b3a14956121ff2170e5030b471551370178f43e5626eec58b04a30fae2
+
+    command: >
+      bash -c '
+        if [ x${ELASTIC_PASSWORD} == x ]; then
+          echo "Set the ELASTIC_PASSWORD environment variable in the .env file";
+          exit 1;
+        elif [ x${KIBANA_PASSWORD} == x ]; then
+          echo "Set the KIBANA_PASSWORD environment variable in the .env file";
+          exit 1;
+        fi;
+        if [ ! -f config/certs/ca.zip ]; then
+          echo "Creating CA";
+          bin/elasticsearch-certutil ca --silent --pem -out config/certs/ca.zip;
+          unzip config/certs/ca.zip -d config/certs;
+        fi;
+        if [ ! -f config/certs/certs.zip ]; then
+          echo "Creating certs";
+          echo -ne \
+          "instances:\n"\
+          "  - name: es01\n"\
+          "    dns:\n"\
+          "      - es01\n"\
+          "      - localhost\n"\
+          "    ip:\n"\
+          "      - 127.0.0.1\n"\
+          "  - name: kibana\n"\
+          "    dns:\n"\
+          "      - kibana\n"\
+          "      - localhost\n"\
+          "    ip:\n"\
+          "      - 127.0.0.1\n"\
+          > config/certs/instances.yml;
+          bin/elasticsearch-certutil cert --silent --pem -out config/certs/certs.zip --in config/certs/instances.yml --ca-cert config/certs/ca/ca.crt --ca-key config/certs/ca/ca.key;
+          unzip config/certs/certs.zip -d config/certs;
+        fi;
+        echo "Setting file permissions"
+        chown -R root:root config/certs;
+        find . -type d -exec chmod 750 \{\} \;;
+        find . -type f -exec chmod 640 \{\} \;;
+        echo "Waiting for Elasticsearch availability";
+        until curl -s --cacert config/certs/ca/ca.crt https://es01:9200 | grep -q "missing authentication credentials"; do sleep 30; done;
+        echo "Setting kibana_system password";
+        until curl -s -X POST --cacert config/certs/ca/ca.crt -u "elastic:${ELASTIC_PASSWORD}" -H "Content-Type: application/json" https://es01:9200/_security/user/kibana_system/_password -d "{\"password\":\"${KIBANA_PASSWORD}\"}" | grep -q "^{}"; do sleep 10; done;
+        echo "All done!";
+      '
+  registry:
+    image: eclipsebasyx/aas-registry:1.5.1
+    container_name: aas-registry
+    ports:
+      - "4000:4000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: basyx_db
+
+  aas:
+    image: eclipsebasyx/aas-server:1.5.1
+    container_name: aas-server
+    ports:
+      - "4001:4001"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    container_name: mongoDb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: aasRegistry
+
+  gui:
+    image: eclipsebasyx/aas-gui:v2-240801
+    container_name: aas-Gui
+    ports:
+      - "3000:3000"
+    environment:
+      - AAS_REGISTRY_PATH="http://registry:4000/registry/api/v1/registry"
+      - AAS_REPO_PATH="http://aas:4001/aasServer/shells/"
