@@ -7,11 +7,7 @@ Hence, the Industrial Data Platform fits well in the following contexts:
 - **Integration of several data sources**: the platform allows the integration of heterogeneous data sources through Extraction Transformation and Loading (ETL) operations.
 - **Cognition enabling**: the IDP enables digital twins with cognition thanks to batch and real-time data processing.
 - **Data Space connection**: thanks to deployment of data space connectors, data providers can connect with other data space actors and share their data.
- 
 
-### Table of Content:
-- [Industrial Data Platform Components](#industrial-data-platform-components)
-- [Setup](#setup)
 
 
 ## Industrial Data Platform Components
@@ -23,8 +19,6 @@ Hence, the Industrial Data Platform fits well in the following contexts:
   <br />
   <b>Fig. 1:</b> The Industrial Data Platform Architecture (Digital Twin View)
 </p>
-
-
 
 
 
