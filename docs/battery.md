@@ -67,7 +67,7 @@ The DBP uses a containerized architecture with services for data integration, sh
    ```
 
 4. **Access Servicese**
-- *AASX Server:* http://localhost:5005
+- *AASX Server:* http://localhost:5001
 - *FIWARE Orion Context Broker:* http://localhost:1026
 - *Jupyter Notebook:* http://localhost:8888
 
