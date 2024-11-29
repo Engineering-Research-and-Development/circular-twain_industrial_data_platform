@@ -1,5 +1,6 @@
 # WEEE Blueprint
 
+![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/main/docs/imgs/WEEE.png)
 
 ## Scenario
 
@@ -53,8 +54,8 @@ The architecture integrates multiple services to support Digital Twin interactio
 
 1. **Clone the Repository**  
    ```bash
-   git clone <repository-url>
-   cd ctw-idp_weee
+   git clone https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform.git
+   cd src/use-cases/
    ```
 
 2. **Ensure Required Tools**
@@ -63,7 +64,7 @@ The architecture integrates multiple services to support Digital Twin interactio
 
 3. **Run Docker Compose**
    ```bash
-   docker-compose up -d
+   docker-compose up -f docker-compose-weee.yaml -d
    ```
 
 4. **Access Servicese**
