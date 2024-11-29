@@ -45,7 +45,6 @@ The architecture integrates multiple services to support Digital Twin interactio
 
 ### AI Integration
 - **TensorFlow**: Processes real-time data for predictive analytics.  
-- **Robotic Arms**: Leverage camera vision and Digital Twin data to enhance dismantling operations.
 
 ---
 
