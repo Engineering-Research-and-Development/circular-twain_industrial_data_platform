@@ -1,4 +1,4 @@
-# Battery Pilot
+# Battery Blueprint
 
 ![image](https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform/blob/main/docs/imgs/Battery.png)
 
@@ -47,4 +47,34 @@ The DBP uses a containerized architecture with services for data integration, sh
 - Custom bridge network (`pyspark_net`) with IP subnet 172.28.0.0/16.  
 - Logging capped at 200 MB per file for Spark services.  
 
-The architecture supports distributed data processing, secure sharing, and advanced analytics. Designed for modularity and scalability.
+---
+
+## Setup & Deployment
+
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/Engineering-Research-and-Development/circular-twain_industrial_data_platform.git
+   cd src/use-cases/
+   ```
+
+2. **Ensure Required Tools**
+- Docker (latest version)
+- Docker Compose
+
+3. **Run Docker Compose**
+   ```bash
+   docker-compose up -f docker-compose-battery.yaml -d
+   ```
+
+4. **Access Servicese**
+- *AASX Server:* http://localhost:5005
+- *FIWARE Orion Context Broker:* http://localhost:1026
+- *Jupyter Notebook:* http://localhost:8888
+
+5. **Stop Services**
+   ```bash
+   docker-compose down
+   ```
+
+6. **Persist Data**
+- Volumes are automatically configured to store service data for reuse across container restarts.
