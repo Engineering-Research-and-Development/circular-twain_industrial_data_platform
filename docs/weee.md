@@ -68,9 +68,9 @@ The architecture integrates multiple services to support Digital Twin interactio
    ```
 
 4. **Access Servicese**
-- **BaSyx GUI:** http://localhost:3000
-- **Jupyter Notebook (TensorFlow):** http://localhost:8888
-- **Kibana:** http://localhost:5601
+- *BaSyx GUI:* http://localhost:3000
+- *Jupyter Notebook (TensorFlow):* http://localhost:8888
+- *Kibana:* http://localhost:5601
 
 5. **Stop Services**
    ```bash
